@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#14090f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZjRkNzkiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmIzNDciLz48L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTEyIiBmaWxsPSIjMTQwOTBmIi8+CjxwYXRoIGQ9Ik0xMjAgMTAwIEgzOTIgQTQwIDQwIDAgMCAxIDQzMiAxNDAgVjMwMCBBNDAgNDAgMCAwIDEgMzkyIDM0MCBIMTk2IEwxMzYgNDA0IFYzNDAgSDEyMCBBNDAgNDAgMCAwIDEgODAgMzAwIFYxNDAgQTQwIDQwIDAgMCAxIDEyMCAxMDAgWiIgZmlsbD0idXJsKCNnKSIvPgo8ZyBmaWxsPSJub25lIiBzdHJva2U9IiMxNDA5MGYiIHN0cm9rZS13aWR0aD0iMjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCwtMTApIj4KPGNpcmNsZSBjeD0iMjEyIiBjeT0iMjc2IiByPSI0MCIvPgo8cGF0aCBkPSJNMTcyIDI3NiBDMTcyIDIwMCAyMTUgMTY4IDI2MiAxNjAiLz4KPGNpcmNsZSBjeD0iMzAwIiBjeT0iMjA4IiByPSI0MCIvPgo8cGF0aCBkPSJNMzQwIDIwOCBDMzQwIDI4NCAyOTcgMzE2IDI1MCAzMjQiLz4KPC9nPgo8L3N2Zz4K">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAA27UlEQVR4Xu19CZgc1XXuf6t6nZ591b6ANjRa2BQJBJaNTIwDBtsRBsfYeMPO84rjOO/5vcRxFuc9x89JbAOOQ2IbvICEbMAQSMJiFqMNBNolJKF1JI00+9p7Vb5zqqqnurqqp7vVy4yo398YzVR3Lbf++99zzz3nXIHSQwL4J2G+VC1qG/0BZTGEd6mqKu0qsEAA0wE0Q6AWQKD0t+biPBCBikEA3SpwSgAHhZD2Qo3vjkakfYMY7LWc2wNA0X9KBlGyM2skpvMnjWu0huqXKYq6VlWxVgCXQmCqEII+B6ja//F/XEwaaAQS2pumN6iqClScUYEdQuA5SRLPnRvp32V6IFl/20TuoqMUhNYIqvVG1AfqZ/ugrlOBWyGwgghMpFXVFHXpc/QL3YtxP6W4LxfFh/ES+ZXq74/fvxCCX6JO8FcF8EgMYmN/pP+4fhtpPCkWikkcOhfdJCtyY7BmlQTpcwK4RQhRS/zV9ddQbEPBXVx4IHIbCiwTtYVgcg+qwOMKlPt6w0Nb9McmxTZE7bxRLELTTTFRm6vqrhCq+BqgrhNCyIqmxHTMUOBiXdPF5ICh3vRfWRKCiJ0ExEZVqN/pHh3YbiJ2yjwtFOdLrpQqt4ZCbYrq+QZU3CUgvCY1dpXYhQFDuVm1VahxCNwvicRfnxsZOUuEP1+1Ph9CE1F5WGkO1N4uIL4DSczQbWPqaXRzLlw4gTlCtjYUtUOF+rXuyODD+odT3MoXhRKaTYxGNNZKQeWfBPAJ3UIm1xwdK/S8Lt5eIMVOCpBLjxQbP1HC0t296CV3YMqMzQeFEI/8iYmWqvrlqqr+XIJYokA1JgDGzNWFi3zA/JEgJAXqHiHEHV2j/TvBRE9fvxgP+RKQL9AUrL8FKn4rBJOZVNlYPHHhohAwf4hLxCniFnNMIzNxLmfko9BeAPGWQM1HIeQHVKjGoolrK7soJjTbGkKFmryzKzL0M0DjXi4XyVWhqZfEW4L1n4ckP6iCfXE0TLhkdlFssKeDOSbJDzLnNDLnpNS5KLRmZgTqPypJeJBXftJX9Vy4KAXYf00ry4qCj/VE+kmpx7WpxyM0zzSbgvXvk4DHdN+yeYnahYtSQiM1BJkD7+8J9z8xnvcjG6HZF9gQCi2VFc/vANTo6/W5mikuXBQDhkUwlJQS1/SNjOzWnRC2wU1O5GSiN6GpRlY8DwkICuekE7hkdlFusLASB4mLxEn9BmzF2Img2kmCiR8IiHZVc825E0AXlYJMHCQuEieziasdy9lubg7UfkhI0npVZTLnNMN04aLEID+1R1WU27ojgxvs7GkroXnCN6W6uimZkHdCYApHfbqmhouJAYVTCVR0yp7k8s7h4R59XpcKrreaHGxqJBLyNyHEVNW1m11MLFByiELcZI7a8NOs0ExmitGAqr6qjgUZjefac+GinNBdeUhCiBV6zEcqOi9jUqgqyl9ACFpqNFJqXLiYSODMLuIoc9UCQ321iSBnm2CLOpbg6qqzi4kIQ6UVVWCVnvXCHE5XaBVfhhBGurlLZhcTFcRNsqU9zFkTjBQqhbKzPULZDYhq/bhLaBcTGbpnQx1OqNJSPZtcSsUxy1A/JIREqzDGUqMLFxMZrNLEWeKufqNMaD3+FLfpdQZcZXYxWcCZtoK4q6dsEaHVVm99uxDiUj1o343XcDFZIBFnibvEYeIyk1eR1XcLwbPEtPpzLlxMAiSIu8RhuletbBOwVrewXXPDxWSD0BdM1jKh61DXoAK0OpgiuAsXkwgScZc4TFyWpECyHQJtrkK7mKRghSYOE5clj/AuFUgtprhwMRlBCQAe4rJHFUo7Fz6dQIWZebWHy7FSLpkKveCjiwqD3omkU4XeyVhF5AkAvi+l3aOqmD9RZoIaiYFoMonRRILJ7JVkBGSJyV1Qn8sWYmU+Zv1cPhfLtQFzvReCcX0tFKc8cHgOvgUVGE0mEEsq/C6qvDICXpn/PiEERwvcn+8RwEy9xXJ9LUUHXVgWEoYTcSbz3JpaXN02FataW/nfUwMBJnsazL/yv01v3S5tgVre7u9m9mQ77tg6lvOmfS7bNZ3uWWdwPvdivaYZae1k6Rl295rR6SikXhslz4VjONo3jG2ne7HpRBcOdQ/CK0mo9nugUCWNojMjZ7A+E5dFc6DuLARaKxUuSkSlxhqIRXFpUws+d8lSvG/WbDSFQppDkcuAGE1lM3VNvRSHaa2Z7LYkyfN72Qib1zETc2y/Z70vg+g2HddQcTqW+rdOBnP72D6/8Tk9N4k+Y3wulatk3IugCs/8PgaGo3j68Cnct/UQthzvQq3fC48kIVkZO0RrTBXnRFOwLiwqtEGPLAQiSYrTBr6+/Ep8sX0pgl4/kIhBUcjgoBekmSFM6oJUK1snOM/zFno/BX2PXlkWhc16LMsIlscxLv6m34JMY7vfg0Q8iftffQvffHYXwvEEqnweJJXKaLUKRERzsK4iVycyk53cFAjgp2uux5rpM4FYBElFgSSRzWwuypunMmdT7bxU1DLk5aR259HxHK93PmQuTScgsSEzg94jQn5sP9mFOx/ahKP9w6zWiQqRuiKEJjODbOUGvx+PXX8jlje3IhEJQ+bJXz5DZaFEt1HmCUv0iUdm83yFVDuRVOCt8uNYzxBu+ukLON4/glCFlLoigUhkM1PH/sWa63Uyj8JTCJnN9l5eip7HRG48ojupdtq9FaraE5vM9Iz0mF5ZQiIcxZzmENZ/ZDWqfR7E2RtSfpSd0B4hoT8WxV9eugJXT5/JyuyRTTVsnAhiJWw2cyDts/mYLkUkego258ypE1SCzDTi2Uw6U23ocIwKt8gCidEY2mc04jt/cCmGowlI5LQuM8pKaDI1hhMxXNnchs8vXgolGmEzIwWr7WtGtmNm8ljJbEW2NnY8ZqOwToQtyvUqQWbLjZt/zzZxNN0rjbLJkSjuuGIu1s5rw2AkrtnYZUR5Cc2LJgq+uHgJvF4vTSvsbWYrKbNN8qzq4fhiCh32z+d7hU7Iyv09asTClDnNu2K0vSThK9cs4FdTbo9D2QhNzrdwMon5tXW4eeZsqIk4JH1X5KyEzUbmlJ3qMDl0GtrTOsz5ENZJ1cY7Z7kJm+16xSWzLAmo0TjeNa8Nl05rwEgskbkoVkKUjdBkTpGb7tqpU1FdVcV+Zm7L8Qhr7ucZw6DpZdge049bj+Vkw45HykLJ7PS9SpkZRVRmHYqqwBPwYO3FrYgkkvzuy4WyFWGkZ6KmW9nSNtaETsTKR0HzMU/SGrZIE8Ac75X8trxQxGtF+mJRWkcrt2oXV5lTMFYcFWDFrCZePSzn4mHZCE0L2H5Z4tgMobvtUupbqNoVROY8Vw4L7AR0FVrrpAeneZFE2+BIsjYiJZO8RCwbJ7+QyMwb19PDK7i4oQohn1zW5fDyEVpVEZBlTPEHtdAts7lghtUEsYVD/IXteWzgOASenzfDCKlkAntkyB6Z4mCZwAORKPpGI4grCmbX18Dn90GJxrS8e6f7LgnRS6jMOnh3WFVFQ5WPl8JHYwn2dpRjglg2QmtiKuBhg8rwd+qe+VRLGP9wIKz5ZRSq6kX+Hi8B04hDMdweD+D1AEoSZwdH8OrZHrzW2YUd5/pwqG8QfZEoLzjMrA3hL1YvxwcWz9FIbbi29HvTWkfR+r0WdpPWRPTxtMfI2XQpPZlTtiUrtaDNNLXncBSR4qKshNaaU39L9IB5T/KyEV1/WUUmrFNQFN0JxZ3QgoIc8LMiHerux1NHO/DiyU68cbYbncNhxBWK6RbwyzJ3ZnrJh3oHcftjL2KjLPC+hbOQjMZ5EYJiIwgU+CNkD1i+ze3ETZfUTJakNprQ91KPXEZvxlgPc5hUMqPLocnpKDuhdal2GGbLFJuhDRc68vNmUOwCeWhkImiVH+FIFI/uOYTHDp3AyyfPoGs0wjHCQa8HdX4fqykHwesTQnrCGp8XA9E4/t+m3bjh4ukc9yiEBDno5fsaHY3gUFc/zg6HEU1o0Yj0PQqon1ITxPyGagSqAlpni8Y5us3gfuZoZzxr8b0Ztj5o43oVIDOh/ITOpqBpRMvVpWejzAVO5LJ+jxSZJnKSBLkqgJ7hETy8+wB+vOsQdnf1stlQ7fOipSoIVdXMEI4NthGphKIg6JE5Mq1nJIwpLQ0YHBzGkweO4dkjZ7C9swcnB0cQjif5XAZI3SlTZHZ9CFdObcLvz5uGG+dPRzDkB6IxJJMK+4EzR74yktl4H+WyMSaEQqfeUI4qWRDRs6l9fp2AHW5UAT7gw2A4gntf240H9hzG4b4BVHk9aAySyaGlIhFZx4UA29LTaoIYSiTx0xe24xe7j+BgzwDfddDjgU+WUOfXFNvMR+okb/UOY8/Zfjy48wgWt9bjj5bNwacuuxgNNUEo4ZjFLVhmMhtuu5RSl89+roxCTzIysyp7ZAivBxv3v4W/euV17OvpZ7OB1JiVOIfYX36v+uSPOojB03W/egG7zvWizufjjsHuPhL2LAof8MgIerWArrd6h/A//+t1/OT1t/Ct6y/D+9tnQ43GUtfIbO9xTBA+7tAJzudYmVB+kyNNbW3G4xQq75qjSZ8c9KNzeBT/+5lX8Mu9h+GTZbRWBZFUlXHVOJUlrYLddZF4gsla7dMUuGNwhJV/SqiKO06uQfGclKo3D5E75PWgY3AUt61/CV9ctQjfueEyiKTCtj57UDIm3yUgbLZOUEaUn9Bprjmr/8miHmXyWGgYmxySOtIrl0NB/ObNo/jqb7fi+MAQGgOagmYzKzQSC+4Mw7E4Z0lTvHBDwIflU5rQGPDhhWNnePWBJo/035zMFAcQudnHr6v2P27axx3l3z54FapkibYYYXfpmJCUgczld26kUH5Cm8mToRw6sdJU3GqD5eeVyNebQeTgFDCvB9/e9DqbGKTKTcFAVuIZYZIUr0ILCbUBH1ZMb8GaWW1YPa0Fl7TUo7W2Cnc+9hJHHJLtrSmt/dtnH66lv2vmiH09DEO1p1QHsWHPcaiKil98+FpelaWto7Q4sDKQ2QwjvvpC9kOPm+yaD5kL9WZYzR79PExmj4yIquDjv3kOG988ykQmOKmoQeTBWJz9yItbG3DTvJm4Zf4MXD6lkTsGkgpFwOMzj7+E9fuOoi0UdLS7jfOFE0kO7DFnUdMx8o6QGhvktoJGBCL1xn0nMePp1/Hdm65EMhJL3wY4Y+QrMtF5wlAZma6QQpuQZoIUstiSbi5kdAirojt0AiazLKM/kcBHnvgt/vNoB9vKZPvagZe3hcBQNM7kWj2zDZ+9dAFuungGAlU+jcTxBGKxMHyhAH7y2n78645DmBqqsj0nrzRKgoPi6Xzzm2pw5bQmzK2v5oWZmKLgcO8wtp/pwVs9Q+yeq/F7bethkAelJeTH9ze/idWzmvHBS2cjORrLdOlxexeZzKlRtkxLgxaUn9B5mxmlX2whm1nIEkah4LbHn8Nzx0+jNRRkYtiBVvzIbBiJxfCOWVPx1ZXtuOGi6VrNilgMydGI5tEQgNfvxYneQfzlyzvYjk7YmBhsc6sKBsJxrL1oKj63YiHeOacV1eQO5PPoZlZSxWA4imePduLerW/i5WPnUBfw8rXM/mru4ioQ8sr4+jM7cO3cFjQHfUz+tNCRUpDZ7LarAMpPaAPZlNmKbJ3d8VhugUbUXVQqdiNL+NQTv8XzJ06zSUBDtxOZ+yIxtFQF8PfXrcAnl82HRJOvaAxKnOxvwYsvdF+8guf14Aev7sfpwVG0hgK8FG4GkTmepJhhgXtuXIm7rpinLXnH4kiGYxkKWuuV8cEls/H+S2binq1v4hvP7uBrUicz9xUacWgR5nDPEP5562H8xXuWQxmN6qFwJVJmx0l8+VC2AP80jEfmXBdcHBsw94kj2aiS34s/eXYz1h84ipagPZm57p4Q6AlH2UZ+8Y4/wKevWASRSLCNSpMuMgOMW2IviUdGd/8wfnXgBE8SrW45El+jDsn6W9fgrpWXQIklmMi8kCNr5zT/sH+aFk/iCXxpzWI8uO5qzeyweWQK9yB/+frdxzE8rOVvasV7SmBm8IObRtNsIlRClJ/QE4nMFFxUFcA/b9+Le3fsRxsraKYyE5lpUkhuuL9dczk2rluLi+qqU6aFOWndsOF5scXnwfr9x3gZm2LBrdMkov9wPIl7bliBtQtnID48ytfijuEQaETNJ8tkwAPxwTBuXj4X337PZRwbYs2yJpWmBZiD3UN4dF8HVzpKK6xYtMmhhcwVRPkJbYbVnnZSZp41G1/MXX0NcmlI/x69WFrKfvXkGXz95e3sY7ary2YUxSEPw8O3vBN/ds1lHPKpJBK6aWGhqX6fHCWbTOLpI6dsszaItAORGG5ZOBO3X3oxEiMR9ldr92x/zrHn0VYa6fPJ4TA+u2oBrr94im2WNXvMBPDUwdPaXpVGMxaNzGy0Wdq6cqgAofUhz3ZymEk8J69E6uUW0Am4+WWJFfcLz21GXElqAegWHrF9qygc+vmrD16HmxfPRWI0nFo8cSIemQWSR8LZoRHs7epnlbSWnKXfabXwT1Yt0j6fItr4ZE7BeHYh8JWrF9qyiFXaI2PnmT4MDEU0e9/6yWKbICm3XflddxUgtAVpJohTnp+uAkXqBOyi8/vwf7fswGud3aj1+TLUmQVWVdh0+MX73oFr505HYiTMajueinKoKJGIQkBJeSmvzvTY1FEoG/ryaU1YMb2ZJ4BsLhRAZiPL+h1zW9HeVoeRuDbBTI1nbPnI6BgMY1/XEMm6HpOuo9hkNkSpQig/oR1J6eSDNhre1EJpw6VTJ7BXezY1fB7sPXMOP9pxgE0NO7uZJoDDsQR+dMPVePf8WUiEqcLT+GQmgjB5JYGTAyPs+rNmPdPv5EVZPbMFko/s2tzMjAxl1tuMsqx9AS9Wzmy2zbKm60XiSXQMjFIh7rGRqGAyO72Lcd5hGVB+QtsRNEcXWyZyc81lQAB//srrGI5ruW5WkAqTN+PuKxfj9uXzNTLnoMxWhR2JaYskdqCrLmiu1Q4VoMwGmcfsV4GFzTW2S+l0LepmdD9aGeXzcdvpQmElb+r38psZZlSG0NkUNq2hijMBNM7JfmG/F88e6cB/Hj2Fen+mqUEEH4zGcO2MVvz1miuQjES1yd+4xMu0fZ0aVyOUgJ/PW4DN7EAev8f5dZLp0cN+bbp0oW67HMmcNokvLypM6OISVoPzObV0KBXff2N/xsqaAfJ0UDDS9969Ej6PpJVcKIDMhKxh0qpmo2dNYzKTPWOYt5BSX8hxAj17rZ/W0UxbR+Tl6ciDzBVE+QmtjX+ZxMvmmst2LEdFJzuT1HlLRyeeP3GGi3Jb3XS02tYfjeEzly7AshktWvKqsfRsRhq5nBXW77VvXsMEOE42rXGy8QhrwEystGcHjvXT+ZwgdAV3cLGNq9rZvud0rPzMLj+h7VQ0mwky3rF83HYCuHfHAX2ilt7a9CtFt82prcbXVi2BSp6HlPvJhBzIrJ1awdSaKs0HbXmvNPzT37ec7GJfdVptjiyEdTpGnU6NJbCto5s9Gk4jQ8otmZcyF2CepNqt/PZ0BQit6juM6zATMk+PxRiyezpokKWaGcd7B/Dc8TO8HGxdhibbeSgWxx9fthDNtdVIUoKq0NKr6LP8o6dbkbJn7PlkIgkTOpHE0tZ6NAa8SNAatAnkaQn5PNjS0Y1DXQNcy4P91OZFCov6OpGZRxmfjB1nevHG6X4OSLL6vOnq9Hx1QV/GacdXZut7Mn7PQvQKENlABQiddVR0QIHeDJ0UxCfVI+Oxwye0MgO0dGwR3UhCwazaED7SfhGS0Sg8XolNFErBonIFnpD2X5l+Ah6OzjPyCdPoKlRtc8qEgjkN1VjYXMexzWm+YVrlI/MmEsMPtx+GsCFhriYIRwp6Jdy79bBWoShLZUR+bqcRJkO1HUYl247m8NkKmByVibZjv2vxl7PTG3usE/B7VBT857HT2iKHZSQkErCbbsViTJnaBAyPons0jD0dAzgzNILReCIVokm1MabWVqG9qQ5ttSGyHQAKKEokICSqFKSBlNPj8+Cdc9rw8olzqBW6v1kHKX5dwIcfb38Lt7XPwsqLWhEfiWrL3zna0+Tj9tb48ey+Djy04zgagvab9dDzEplZoRVtO5Dsykw3mc0uzuFYhVAZQmezi9MU4Py9IEYWyvG+Qew818shldYhmRY5KGT09y+ajvs37cKTB09gb1cfOkciiCWpNsbY2yEyUKegeGkyKdbOnYpbF8/GtMZqDugnU4U6CNvFiSTuWDoX9716kMNGrYLFti8UfOKxzXjqY9dhTlMN71VCq4Zjya2ZQ7uRR+it8WH/6T585tHXWPGdYOQcNlPigTUsz1aZcyDseN9zvp2SovyELqMyp3TG68GzJ87g3EgYzVV+2+xqUsZPPPk7vNU3yISs8ng4m7ra58l4NzTpGojG8MyRM7z55D9t3YebF83EF1csxLy2BqjhqLZPeSyBi9vq8J55U/Hw7uNoqkoPITXiLE70j+KmB5/Hv/7h1Vg1t42XwpWEqciMTg7iIvUTySdD8sv47ZuduGvjFnSNRBx3naIOGEsomFob5DogNAlNzYfzmhzmodrlnwumUEEb2mYil4/HwtZuc7a1KWbDKKllBU2YKFCpc2SUCU8LLuTCM2zk1KRQnxzS3z00yfJ7+fMUukkZJNf+5L/w/U37OI+QzA+FaukqCu5euYhHBrtoPvpbtd+DE4OjuPGB5/G/nnoNRwZGIAU9kEN+yEFf6odseCngxcGeIdz96Gv4wAMvonskyh3PqTYIdSy67+aQH9VBz9hKYl5kJoYWqtrlRfkV2tBNx0lHdo9FPt/j2b0kIRKO4NUzXVpyqY160J+MOORca2PQd4xSX0TuFoqlTibxlae34eXj5/Bvt6zihYx4JIbL57Tiy1ctwt+8uJsTWK2pXURGqpZEHeUfXtqHn71+BKvntuIds1swpyGk5xSqnEv48vEuvHKsC72jMdTr6VfZtiOmTkyx3FNq/BwBqETJTWhhcyGuuZRpaEP0CrrtKkDobOPR+XkzrNA8ADL2dfXgcP8QArIlwN0CO7LnAnoiIg11irbqIB7bf5wnkxtuewemhQJsF399zRImOm363ljlQyyZblMTmYkHTSE/+8N/s/ckHt1zgv3V9He6BgVReYVAyO/lc1BHsOYSWkHfpc+1T6nnkNmM1ncUFmv5CAvMJsgEQvlNjjQbuhieDufgHvYVywLH+ocxSmGVeT4tEZRMD+uP2QVnBpOOM64D2NbRg1sffgkD7P2QOG7jwXWrcVFDDfojcfhsbkbrGNp2w/VBH5szZNZQdjf9t4V+D/r4peVSfsyweilycHFLtUPcSI6mhJPnxfZ9Vs6IzvMVFxFFmxxaGi/DNhR4s39QU+scb58IRaQld133aDTjh2KZaSh38vmS14Rs1m2nunHXo5vZZ52IJzCjrgqP/NG1mFUXQm9Yd9HZgM0Z3V4nc4Jteb1UGKtyjs9BMDwcs5tCWnCJ0Qj5TPLMyOd7uTZ4EVEBkyNjoM+svOo0OcxT0fk0iord5/q0QPhxmMC1NqDFc5BrbllbI1bNaMa8hlr4Za02BpXA3XyqizNAqHYz+ZJ5ymQue2tS6o37TuCezfvxpTXtiA+F0d5Wj2c+uRYf2fAKXjl+Ds1VAT1ZNh+ajsEwR+xAzxNNKJjdWIX2tloaPjLdgeO53wolc4VQfkIXTZktLWbpBNpED+z+Oj08ypPDbJQxEmGH4nHcvHAWvrBiEVZPb4bs00vamux7JZ7A1tM9uO/VN/Hrvcfh98icTmWdnNGm7lRR9Fsv7cUNC6ZhfnMtTxJn1lbh6Y9fh796fhf+ectBVnQKlqJOR7y2+sntYBSCNMot2JlB9DcK7P+9mU2org5wtrh54978PB2GAWNjW1uPFdY3i4LKmRzlcNsJCeFEHL2RKHsinNrZSIQlW/nfbl6NDbe+E++Y0waZSwZEkQxHtP+Oaj9SUsFVM1vws1uvxc9vvZZ3erIubxuvnxY8ekej+N7mA7xETeYMdYiQAP7+psvx9MffhZsumcGdgVxwZOYQiNyG7W79N4E+1zUS5c5EOYt2k0OeEKoqLp/RoNfjyFykSSGrpyMPMmcoenlRfoU2XnWJ3XZsM3tknB4I4+xIWF/yzqQ03QZ5KCgGeuO6Nbh23nQkRyLa/iVUUoDLMJtuVv+nwtkoKj6wdA5m1VXhll++wLEUtOeK+TJk89YGvPjNgVP4Pz1DmFZbBZVWH+l/IzGsntOK1Re1YuepXvxsxzG8dPQcjvQMoXc0nlJqug9DtenfVC1pcWsd3nPJVK6K9Mn1W7URyTLto9XJxio/3j2vBaDJaZr9bLZbshG9ADKnRuHyS3WFCO2EbG67XNxI5pek2Rxd4Shv7UB7ntgN5UQQKrT4wPtWM5njw+GcygloTgrBn79idgvuf99KrNvwMryyVkjRAP2bzJEzw2H8cvdx/Om7liA5muARgxdfKC1KAMunNWD5rCYkIjEc6BrEG5393BmHowmu1ERxGrUBD6bVhXD5tHrMawrB21SD7z+1E6cHw2gNpa+AanX3Erh6ThMWTqmFmmY/W9rJQDZ72opx3XblJzOh/IQuk9uOVVIS6ItoewNWZbwRbViniLebF8zEbcvzqY0x9rK8Holrarx3ySzcvn8Ofr7jCO/PZ3arcYSnJOGZw2fwp9dewsFSDH0UINAyuRpT2cxYMrUBS2Y1jZXtMnd0OllSYZXv6+zHDzcf5uV565xSS8RN4rr5rRR8giSNHhkLKgWob0pYsrj7uPGtvaM8qJwNXbTJoYPbjv+s7XnipBVGoP2XVizStnBIEc3hnPwyM8/GQUYJBV9aOZ83mjS2ZzNgVDDa1zWIU33DbApZ6zOR4rMnhshN5cVGY0iMRPmH7PbUv8MxxKNxiIAPG3d14FD3kG3AFfmzG4I+/OHS6WRTOWzwmaMPOkPRc/xeBThdOUKbB+VxPBaZDaori+P3qAAjRfJQdSJt2zNrcrdRG2NZawNWzWjhEFDOAM+HzPr12cMQj2PZ1AasmN7IfmpzNjm9fnID0qRv57lBrTZGWgjfWCcxyvSmJoJ6fTueIMoUxSe4Zh7Vqrtn0yEtKMkyN6DvkqlyzUXNWDi1lrNZ0rwgpVJmJ6KXEZUhtMXFlj9hs/mu01XUaRmCRt9oMomV05vh0essF0JmYwjmpWuvB1fNamFXmrUDGTEVVIWUfklROM84CoXqfAS9uHfTIew9S7tw2cSn6Cf/H1ddzJ1aSZuAs9c8dd8Fq2+uql1mlJ/QTmTOZoLkbJ7kXzl+XmON/nLzMDMyPDTGd1XMa6zWkgFsXiQJKdfGMBQyXzJTkRy/F0c7+/GPLx/k4CTrEjipM00Gr5rThOsWtUGNxsdGi2J7M7i99dEy9W8T3j4mR5G9GQbGWwa3AQX7ZP1etnNaZ/oc/J/9LXJtDLO9bkuETDdaSldl4KtP7kB/OM6VnKwdx3BDfuGai+GhZAbDWM92W9k8Fud1rPwov0JzLQrLg2YMiQ69PCu57BV2vOXujIr6Od+LSZlMpEzYSbMJpKp0jTGTw9oW9j5h2ttbrvbhu8/vx2/2nkZ90EadhTZnuOaiFtyybAaUcNy0DYXJzHAaYdJGQov6Wjuew/Onq/Y4jVEClJ/QjmS2FOJOa8Bsx+yj7bT21uojO5kAhLf6h8ea9TzJTLYx7fLqFAhFwfa0xD02ouRGZlpC99T48Nt9p/HNZ/aiUd9ewgqiD00e//a97VzcfMzdVwSbudBOUGaUn9AGcraLc58ApnUCOr9KqUdVvLBhVWry21KZ3K0dXUhSDQ5zJnieZgaBLY14AptPdvHCjPV67CKUBabWVY0lqprhoMzkdvSEvNjT0YuPP7yN7WG7DkpJsD2jUdxx5WxctaAVSsQogF4EMqfdJytFelub36nTSFAmVI7QKRQabZe9yKFRcLy9qRZTqwO8yGD2PBi1MXae7eMwT6q2z+6vAsjMK5A+D/Z09nEcdMif7kpjrisK5xQuo6g3vheT5DmRmZQ55MOBzgG8/8e/Q284xlk31hVPetaRWBLzm6vxzRuWQIlSDHYexCuUsON9r/wWRwUIXWpl1olOfCEXV1NtFZa2NuplZtPHeHYfJxV8f9ubuupl83SYCMLXGHubmstOwg+2HsKI2augg8hLy+8UfzGzIQSV63QYB20mgLwYSGaGH9uOduOmf30ZZ4ejtj5nQyqpw3zvA5ehtX68RNgyE73MqKxCW+2y1O/ZEmizK7NZ7ZgqsoTrL5rKK2dWk5VcXhTP/OiBE/j17qPwVFNeoO4WyLCn7SdrlEfoqfbjmX0d+MWOY5xRYnWlGfWg185r00cCZzLzIhAtntQE8PNtR/De+1/kqDqK6LPLUiHzhornfP26Rfj9ZdM5KjCVM2g7X8nRXBhPfZ3MDOv3rPdQYlSO0DZLyOmN5IA8PB0cQBSL40OXzMLs+hDvLWhtX5rA0TbFn39qG7Yc6YS3hjam17JErEps/p2Ok33rrQlg18kefPrRbRkVmQwhp/zBKTUBfGT5LLazM2rm0WhC16T0qyof+hIJfPmRV3HX+lf5HGRmOJJ5OIIPLZuJP7+hPXcyW2EdfZzInO/3ykxmQmUInQcpc/c8ZJoL5FVIJhQ01YfwwUWzMBiJZQToGMvSlHP4wYdexMZdR5lUVFmfJjg09BOZ+Eevbcd7ovg8rMz/vrcDNz/4AvrCMZ5k2lVlouvetGg6ZrTUQrHkNhpEpv0MpZAPT+8/hXfe+zzue+UQ6oJG0H+mMUqTQMr8Xjm7CT/68JVcLmGs9K+FeVYzo1CPhdP3jJ6bodqZ911qVCbaLkMBCAV6M7gxnW1fmhyp8QQ+f+VC/HLPMYT1qv3mbxh5d5FkEh975Hd4bN8JfHHVQqyc3giZ9upOXUOvDRdPYPvpXty39SDW7zzO5LKru0Hvn0wdSnj98uoFHMDEW1aoWnwzjSBUZ4Mke2dHL7770pv49Y4TkCSJcxKdSioYZG6fUodffXo16mi7NorXsO52nyJamc2MVLSd2eFeHpSf0OZe7GQzZ/R4Z8KOp/acIR1PYnZrHf5yzTL88ZNb0VodYN+uGVw8Rt8/+5E9x/HEgQ5cNq2R98q+uLFGzykEjvYNY9PJLmzv6OWAfrKZ6THsamPQSl7ncBh//95Lccn0BsRGInwNzlzxyRwGuuloF3605S08ue8URqLa+QjOZJbQMxLF8un12PjJq9FW7UMyqhdpHE+ZM4SkFETXUQFzg1A5QqdQGmU2E52UiyZLd125AC8dP4uHdh9jUlsLvpCwUDAThV0SwV/r6OZEVq1/sWObKUB+bapWZMQ92w2sFFNBZL5p4XR8dc0idtX5qv18rpM9w/iPg5349e6T2HSsm/P+KKul3hJHncY/yjIXAueGI7hmbgse+cRVaKnxQyGvykRRZsY4YQ0lRtkJrVW+NJ6q9GRmMlIgPQ3ziSR+ePMqnBoc5YqgrVUBzuS2wpiAhXxe1Oj3SqQ1bttIZHWqjWGEpl4/byo2fOwadtm91T2IrSd78dyRc9h0tBunB0bZQ0FlwGg107DT7UCEpRrTfZEoPnfNPHz75uUIymAyTxgzw0xmQ/groNJlJTSpXsRMINsh0hiyCjczModWjdSqkkS1V8ZDt12L29a/hFeOd3FRmISq2MZ8aFU+bTlmC45z0mtqVPs8WNRSi09t3IZdp3pxeiiCIVq9A9ifTDZyqmPYTPqMjkiqTIFINQEPfrDucvzxO+YDUSrmSEH7lnrP2lCSWVAm1abnc8wBZnEyg0qQJbUJdTmJXTZCs2rFEzg9EsYSzswwa54lY6fIZNZeNBUip4zrJNqCAfz7R6/DXY9vwfrdx1Af8HGSLHk08uBvGk9IRakGBnUCMkmIrPdvO8wvlGpK099opZDOT+65bDX0iCN0Pqoa2huN4fqFU/D/b1mO9hkNUEajqSSAgm3mjPa2ED0vb4bpu6nRTIWQyTyKYTiahI8Sh506RJFRNredsbhwqHcAqp5qlK4cOkpEZgMUs0EpTiFZwi9vvRbfu+n3uBQAlaTlIuW0qEHxEuM0NB03SoXR986NRDgCbmFLLQf4k2uPSniRnW1st0Ykzlb5iJRMq3oKzm4J+GR89/2X4anPXov2KbVIjkbYM5JuthntlkksW2VOM/ls4pnPk8zGXaiywMFzRgm28VqzeCgboWlUJdV55dQ59peOLf2aHqbEZE6RmjpUUoUaj+MLqxfh5U9dj8+vWsAEJCINRuNMUqfadkR4Oj4UjfPnyQb+zMp5eOoT7+QSA1rGylg5XgeLYux+9Bp6ZCfTqiC55e66+mK88qXr8OXrFnDFI6rlkSo9VglvRgbRderadhCt02063JdXCbZiQDQH68oyGhiuLdqwZ/NHb+SysmlBOuUgs436kJnBvmafB6d7h7BhzwnOzt5zrh9dw1GOkeAGSk10BAfxkw18SWsdL2fftmwWZrfVIUqlvr73HxzET5/JRmSj8hGZKBRYRBVHZ9ZX4bbLZuKTK+diwbR6basL2hGAa4OYldj6eyncb9lXSp3WDdiUZPMyiVXf+h06esPweTOjD0uFstnQhrurY2gUD+0/ij9ZvRzJ0aSW0l8hMhOoRJhChV9Gk5hWHcTda9px9zULcaZ/FLvPDXAOICWc9kZivIBBCtxWF8Sy1jpMbwhxwisRLzEchuyTMK02iDNDEfhNEXf8iBz2qZm9ZHpQ5aNIXGF1p8pGN7VPwx1XzMK0Zn1rixGylanQjeYuZFRCmTM6j0mZbY5RIoKnxotHt3XgzbPDaA6l71pQapRNoY33QYrXUhXEljtvRIPfy56HzIxkQ42K6+kYI4V9oBGpC6/gEfEo3Zp+DNvI6Hj0VQ6HS3LUHNm7PNkUCuSADw+9dhR/tH4zmgK+VFw0xXzQhJFiSeirVDBmYWstrp7bhPcvmY6rZzdCol1eY0kkE1qYq7bHiv19ZjxH3kTPTsrsq7bOrlaaN6gSEFVVXPN3r+Bg5wiqfNoEuVwom0LrTciBNscGhvCNl17HPTet5ipCKUKX3J427sLoMKZm1tXTKD+gJhVNudkZo0XqGe/FIBwrqE50mfZUicTw4SvncLWmbz27j+OXqZopTQzntdRgyZQ6XDmzEavnNGFxay1k2iKCVizJtBiNpXYRyFDjvAnrwKDzdtvZnNfktuOQ19oAvr1+L3Z1DJZdnVk0y2VDm0Gk6YvG8C83rMKdKy5JL7/Fd1VeZc540RkEyqaU6cc4RyDgwYnuYbzW0cMejkVtdZhTH4Ss5xNS4RfaIYsIwJ2jXBWNHEamrM9vIqxzR1O1LebqA3hiSwdu/9HrqPY572hbSlSE0LzIoVJdDAU/vvFqrLt0PpLDYf3lWh63KKqdXZkdX7S1c+VIdDZbaJ9vsq/pQWkxKaEtMvApKSjJOFfGOU33OiGOOdyPfm+0hzo9lqfej2df78TtP9zOpgeXLx7PvVMCVITQBHqhPNoqCr71rsvxxZWLKcWE8/u0CZQ2iUqhYNUuL5mNTkCkNoLO2Bw2fNt5qH0aKkJ0ve1sOhY/H8Vv+2VKzsSDL53AV36xm5+ZlvRzqXFdClSM0BqpNV/tQCSGdYvn4BtrlmNRa4PG9ESCV9Q40kK3YcfIrWkqB+xkVfTcyMyrd1Y1KZh4YyaIqhMhxYeCz1kE1eZ2NAvEeG2Tfk3z/IH94T4agSQc6xzG3z15CA/+7iTHpWhF28s4C7SgooQ22phsSAqQbwj4sK59Dj6ydC4ub22En2OFrXds+p1qfFAlIgM5K7rpZVHb0zXoWqnzONjMdsRyumY2cyFvcpXYbZc249WJz5MBm05AmTqROHadGsZD207h4S0dODcYQ0PIOzYqVRAVJ7QBjihTVM7uoFrOC5tqsWxKIxY2VKM1FEibONHwTe4/qol847xpDtv9jk9K/gSdS1WwcW+HlnfolBqWbXKUIRPWTphFseyUMiWHWTqzWUHH6yBmWM9peyyzAxG/u4aiONg9it0nBrH/zBD758kFSXEque7vWGpMGEKb1ZqGLAq5pNIDSRu3pywkRJUYVk5rxZa7bmAXW8reHncoHSMXVU3yVPnwlcdexT9t3g+/5M0M1C9k9MxGGtPgMNlgDGbkuaEFIRKhfHflKjXK6oceD9RghieAEldDNvtsE8j2Ho4JjpJLU6d8yEw+0+oA/uWVA7hn80FMrQ5VZFY+2WCsK2lJwoX09tJiQhHaDJ5YOLQXzUk4cs2YfBjSkYOZQaBOQ/tmv3jwNP70qTc4548Lo0+89+MiT5Qt2q5k4IkL68bYJbLM5rWStB4c6xnCJzZuZducK/C7ZL4gMPkJbY0tyEJm5qwsYSSRxJ0bNqNzKIygTWktF5MXk5zQ+ozRzitgY09TICjV0/jy469x+hXZ4BPRDnRROCY5oXVLw85fajFBKL9NrvLjH17ci5++fgQtIT+7/lxcWJj8hM6BzDwJDAXw9J6T+PP/2oWmKuciLi4mNy4MQhuwMzM43sCLA2d68elfb+XwVRcXLiY/oc1mh8XM4DK3HgmD0Rg+9shm9Efi8HkqFzjjovS4MAht47bTHHmCM08+++ut2HG6D3X+zH1JXFxYmOSE1tOUMlx12uKJXOXFXz+zExt2n2S72Z0EXviY5ITW/XUWtx2nAoX8eOSNo/jWC/vQ4k4C3zaY5IQ2QVdpVuagD2+c6MLnHntN29i9oAgjF5MRFwah9afgZW2vhK6hMD62YTPXurDbkcrFhYvJTWiTD5pjmSitSwY+tXErDnYNsTo7VQh1cWFichPaAJXJUGkl0IevP7UTT715Go1lLnDiYmLggiA0TwKr/fjJlkP4x5ff1LZzoMwAF287THpCq/pOq68c7sTdT7zOFUBpddDF2xOTmtBcTNsn42TvCD7+yFZ+gxzb/PZ8ly4qtq1bEUAiTMmZcUXFxzdswcn+Ud6JqpIp9C4qj0mt0LQZ/J89sR0vHD2HhiqvG9vsAqIpWBcWQGCytQWZFR4h2NdMAUduCpULFYhIQsWg3hSTyvQkFzSVIXDJ7MJIKCUuU7XXnvHKSExUcMGfSdUNXZQKzGGBHkkFTmbfC8yFiwkPTi4lLpOX69C4lX5cuJjo4AqvOOQRqrTXsaKLCxeTBazR0l4pocZ3q1ATk9kn7eJtD4k4TFyWlIi8FyrO6hNDd4rlYrJBK8Ot4ixxWRrAQJ8AdurlO91CFS4mG7j0LHGYuMwrhSrwnKvQLiYpWKGJw3T/TGgpKZ5VVSRp8W2SPpSLty88xF3isEFocS7ev1dV1R1Cqwfgmh0uJgsU4ixxlzisbzAGKiVE4fDrqYxFel1aFy4mNLj0CnMXbGHwHlKsyEmIDaqqDOlmiOvtcDHRwWXuibPEXf1mFYPQcn+k/zggHhO0I4/GdhcuJjKSGlfFYxp32dJgQo9B4HtQU4ssrkq7mKjQNiEhrhJnTTAITYosdY8ObFdV9XEhaPNed3LoYsJCIY4SV4mzupnMVkVGxoqQpL+BqtJulu4E0cVEBKkzbYoTZ65aYCY0TQ7lrtH+naqK+wVvse6qtIsJB3LVScRR4qphOxt3abdXqZhSXd2UTMg7ITBF31xtUuceurhgoNAsECo6ZU9yeefwcI/uZk7N96xEZTnvHB7uUqHezXsQuyrtYuKA4jYEcZM4amcW2ykvO6i7I4MbVFV9gEqGU/rexHkmF29TJIiLxEnipm5qZLiXndIJuQxiE5pCIpjYLCDaVahM9LdpY7qoLJICQlah7lXDnqt60DNiNTUMONnGbJP0oGcoKSU+rEKlzHB3kuiiEqAJHwXwDxIXiZP6Tdiuk2Sb7LHXo29kZLcKcYceuESwPZELFyUAc40DkCDuIC5avRpWjOe94JDSnnD/E1RxS19wsWys7cJFScA8I84R94iDenhz1rCM8QhNoAmhpyfS/zOo+IKJ1G6YqYtSgbjFZCbOMfe0WP1xnRP51JjxAoi3BGo+CiE/oGqJAu5E0UWxwZxiE1dN3tkVGSIyM/dyuVAuCm2ATuihCyjABwREnxCCvB7j9hoXLnJEgjhF3CKO6WQmZc6JzJq9nT9Y+luq6perqvpzCWKJAtUwP/LpIC5cGGD+SBCSAnWPEOIOfVk7JzPDjEIISIrMMR9KWF6tAD+htXWhufXomOsFcZEriCsJ4g5xiLhEnDLFaOQ9+hei0AZSfunmQO3tAuI7kMQMVaue6NrWLsaDZitTdIWidqhQv9YdGXxY/1LBax6FKLR5mKAOQcvkDws5caUK9T6yd2hVR/8Q3bSr2C4MEBfY7aZzJE6cIe7oZCbenFf80PkotBmcaEt/aK6qu0Ko4muAuo4MfH2LCDpm7CpYrGu6mBww1i3ovzLvgaNSGIXYqAr1O3qAPiHFofNBMclF5yLFZ2I3BmtWSZA+J4BbhBC1vDGmJtaGY5w+W8zru5g4MJfDIK8FF+ZSVXVQBR5XoNzXGx7aot8u5wIWayQvBaEMM4ZnrvWB+tk+qOtU4FYIrODUGS5UnrJEjIcx7QtbkvtyUXwYL9FQYUPUOPJYK0iv0lbrrwrgkRjERj2hlZDGk2KhFIQ2YChwaqmyNVS/TFHUtaqKtQK4FAJT9ZVH3dLWNdzFpIFGIA67Z+gEPqMCO4TAc5Iknjs30r/L9ECkyCUraFRKQpuJbbj0UqhFbaM/oCyG8C5VVaVdBRYIYDqZ4RCoxSTcyOhthgi0/Xm6VeCUAA4KIe2FGt8djUj7BjHYa2kP8inTaFzSkIn/BgPheTqdVoCrAAAAAElFTkSuQmCC">
+<title>ShagGPT</title>
+<style>
+:root{--bg:#14090f;--card:#221019;--card2:#2d1722;--ink:#f6e9ee;--mut:#a98c99;--acc:#ff4d79;--acc2:#ffb347;--ok:#4ade80}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.4 -apple-system,Segoe UI,Roboto,sans-serif;padding-bottom:84px}
+header{padding:16px 16px 6px;display:flex;justify-content:space-between;align-items:center}
+h1{margin:0;font-size:22px;letter-spacing:.5px}
+.lvl{font-size:12px;color:var(--mut);text-align:right}
+.bar{height:6px;background:var(--card2);border-radius:9px;overflow:hidden;margin:4px 0 0}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--acc),var(--acc2))}
+main{padding:6px 16px}
+.card{background:var(--card);border-radius:16px;padding:14px;margin:10px 0}
+.card h2{margin:0 0 4px;font-size:19px}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:99px;background:var(--card2);color:var(--mut);margin:2px 4px 2px 0}
+.hot{color:var(--acc2)}
+button{font:inherit;color:var(--ink);background:var(--card2);border:0;border-radius:12px;padding:11px 13px;cursor:pointer}
+button.pri{background:linear-gradient(90deg,var(--acc),#c2185b);font-weight:600}
+button.pri[disabled]{opacity:.35}
+button.sm{padding:6px 10px;font-size:13px}
+button.on{background:var(--acc)}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.row>*{flex:1}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;background:#0e0509;border-top:1px solid #2a1520;padding-bottom:env(safe-area-inset-bottom)}
+nav button{flex:1;border-radius:0;background:none;color:var(--mut);padding:14px 4px;font-size:13px}
+nav button.on{color:var(--acc);background:none}
+select,input[type=text],input[type=password]{font:inherit;background:var(--card2);color:var(--ink);border:0;border-radius:10px;padding:10px;width:100%}
+.lock{opacity:.4}
+.chk{display:flex;gap:10px;align-items:flex-start;margin:8px 0;padding:10px;background:var(--card2);border-radius:12px;font-size:14px}
+.chk input{width:20px;height:20px;flex:none}
+.mut{color:var(--mut);font-size:13px}
+.big{font-size:26px;font-weight:700}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:var(--card2);border-radius:12px;padding:12px;text-align:center}
+.ach{display:flex;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid #2a1520}
+.ach.off{opacity:.35}
+.pill{display:flex;gap:6px;overflow-x:auto;padding:4px 0}
+.pill button{white-space:nowrap}
+.q{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid #2a1520}
+.q .n{flex:1}
+.q button{padding:5px 10px;font-size:13px}
+#cover{display:none;position:fixed;inset:0;background:#fff;color:#111;z-index:9;padding:24px;font:16px sans-serif}
+.banner{border-left:3px solid var(--acc)}
+#toast{display:none;position:fixed;top:10px;left:12px;right:12px;background:#000;border:1px solid var(--acc);border-radius:12px;padding:10px 14px;z-index:8;font-size:14px}
+@media (prefers-reduced-motion:no-preference){.banner{animation:fd .25s}@keyframes fd{from{opacity:0}to{opacity:1}}}
+.match{float:right;font-size:20px;font-weight:700;color:var(--acc2)}
+</style></head><body>
+<div id="cover" ondblclick="this.style.display='none'"><b>Notes</b><p>Groceries<br>Call dentist<br>Gym Saturday</p><p style="color:#999;font-size:12px">double tap to return</p></div>
+<header><div><h1 onclick="cov()">ShagGPT</h1><div class="mut" id="sub"></div></div>
+<div class="lvl" style="width:140px"><div id="lv"></div><div class="bar"><i id="xpbar"></i></div></div></header>
+<div id="toast" role="status" aria-live="polite"></div>
+<main id="main"></main>
+<nav id="nav"></nav>
+<script>
+// ---------- DATA ----------
+// positions: name, category, energy, desc, tip, minutes, place(b=bed,o=off-bed,q=quiet ok)
+const P=[
+["Missionary","Intimate",1,"Face to face, one on their back. Classic for a reason.","Pillow under hips changes the angle.",15,"bq"],
+["Spooning","Slow",1,"Side by side, both facing the same way.","Lowest effort, best for lazy nights.",15,"bq"],
+["Face-to-Face Side","Intimate",1,"On your sides facing each other, legs intertwined.","Great for eye contact and slow pace.",15,"bq"],
+["Cowgirl","Playful",1,"Partner on top facing you, sets pace and depth.","Let them set the rhythm.",15,"b"],
+["Reverse Cowgirl","Playful",2,"Partner on top facing away.","Hands on your legs for balance.",15,"b"],
+["Doggy","Playful",2,"From behind, partner on hands and knees.","Chest lowered gives a deeper angle.",15,"bo"],
+["Lazy Dog","Slow",1,"Partner flat on stomach, you from behind.","Pillow under hips, very relaxed.",20,"bq"],
+["Edge of Bed","Playful",1,"Partner on back at the bed edge, you standing.","Bed height matters, adjust with pillows.",15,"b"],
+["Legs Up","Intimate",2,"Missionary with their legs raised on your shoulders.","Check flexibility, go gentle.",15,"b"],
+["Lotus","Intimate",2,"Seated face to face, wrapped together.","Breathe in sync, grind over thrust.",30,"bq"],
+["Chair Seat","Playful",1,"You seated, partner on your lap.","Sturdy chair, no wheels.",15,"o"],
+["Scissors","Slow",2,"Side by side, legs crossed like scissors.","Subtle motion, lots of closeness.",20,"bq"],
+["Bridge","Athletic",3,"You kneel, partner arches back onto your thighs.","Support their lower back, stop if it strains.",15,"b"],
+["Standing Face-to-Face","Athletic",2,"Both standing, lean on a wall.","Match heights with a step.",15,"o"],
+["Standing From Behind","Athletic",2,"Partner braced on wall or counter, you behind.","Counter height is the cheat code.",15,"o"],
+["Wall Lift","Athletic",3,"Partner supported against a wall.","Only with real strength and trust.",10,"o"],
+["Pretzel","Athletic",3,"Side-lying, one leg draped over you at an angle.","Pillow between knees saves cramps.",20,"b"],
+["Butterfly","Playful",2,"Partner on a surface edge, legs up and open.","Kitchen counter or desk height.",15,"o"],
+["X-Position","Slow",2,"Crossed bodies, mostly side by side.","Low impact, high connection.",20,"bq"],
+["Shower Lean","Athletic",2,"Standing in the shower, braced against tiles.","Mat down first. Wet floors are brutal.",15,"o"],
+["Prone Press","Slow",2,"Partner flat on stomach, you on top behind.","Tight angle, go slow and talk.",20,"bq"],
+["Wheelbarrow","Athletic",3,"Standing, partner's legs held up, hands on floor.","Advanced. Mind wrists and shoulders.",10,"o"],
+["Kneeling Embrace","Intimate",1,"Both kneeling face to face, arms around each other.","Slow, close, kissing-heavy.",15,"bq"],
+["Sofa Drape","Playful",1,"Partner draped over sofa arm or back.","Cushions where knees go.",15,"o"]
+];
+// kinks (lead side only): name, path, risk(1-3), energy, desc, safety, minutes, place, gear, cnc
+const K=[
+["Verbal Command Scene","Control",1,1,"You give calm clear instructions, partner follows. Voice does the work.","Agree pace words. Keep commands doable.",20,"bq","",0],
+["Positioning Orders","Control",1,2,"You place and pose them how you want, hands and words.","Check comfort on every pose.",20,"b","",0],
+["Rules & Rewards","Control",2,1,"2-3 agreed rules for the night, follow them, earn something good.","Rules agreed beforehand, not invented mid-scene.",45,"bq","",0],
+["Orgasm Control","Control",2,2,"You decide when and how. Tease, then grant.","Agree on a time cap and a hard stop.",45,"bq","",0],
+["Pinned Down","Control",1,2,"Wrists held in your hands, no restraints needed.","Not on joints, release instantly on signal.",20,"b","",0],
+["Hair Pull & Grip","Control",1,2,"Firm hand in hair, controlled, never yanked.","Grip near the root, never jerk.",15,"bo","",0],
+["Spanking","Control",2,2,"Open-hand impact with warm-up and check-ins.","Fleshy areas only, build up slowly.",25,"b","",0],
+["Worship","Control",1,1,"They serve and focus on you while you direct.","Keep it affectionate unless agreed otherwise.",30,"bq","",0],
+["Collar & Lead","Control",2,1,"Light collar-style play, symbolic power exchange.","Never tight, quick release, no pulling on the neck.",30,"b","collar",0],
+["Protocol Evening","Control",3,2,"A full evening of agreed rules and roles, start to finish.","Written limits, safeword, scheduled end time.",120,"b","",0],
+["Blindfold Scene","Bondage",1,1,"Sight off, everything else turned up.","Tell them before touching, easy removal.",25,"bq","blindfold",0],
+["Soft Restraints","Bondage",2,2,"Wrists to the frame or each other with soft ties.","Safety scissors in reach, check circulation, never leave alone.",35,"b","ties",0],
+["Cuffs","Bondage",2,2,"Padded cuffs for a more structured feel.","Keys within reach at all times.",35,"b","cuffs",0],
+["Spreader Bar","Bondage",2,2,"Keeps legs open and positioned.","Limit the time, check for numbness.",35,"b","bar",0],
+["Rope Harness","Bondage",3,2,"Intro rope on arms and torso. Learn proper technique first.","Learn from a reputable source, never rope the neck, shears ready.",60,"b","rope",0],
+["Ice & Warmth","Sensation",1,1,"Ice cubes then warm breath or hands.","Keep ice moving, never held in place.",20,"bq","ice",0],
+["Feather & Tickle","Sensation",1,1,"Light touch head to toe.","Stop at the first no.",20,"bq","feather",0],
+["Massage Oil Scene","Sensation",1,1,"Slow oiled massage that builds.","Check allergies, oil degrades latex.",30,"bq","oil",0],
+["Wax Play","Sensation",2,1,"Low-temp massage candle dripped from height.","Skin-safe low-melt candles only, test on your own wrist.",35,"b","candle",0],
+["Scratch & Bite","Sensation",1,2,"Nails and teeth with control.","Agree on marks beforehand, skip face and neck.",15,"bo","",0],
+["Flogger Intro","Sensation",2,2,"Soft flogger, warm-up to light thuddy hits.","Avoid spine, kidneys, joints.",30,"b","flogger",0],
+["Remote Vibe","Sensation",2,1,"You control the vibe, private spaces only.","Easy off switch, private spaces only.",30,"bq","toy",0],
+["Wand Session","Sensation",1,1,"Vibrator-focused scene where you set the pace.","Start on low.",25,"bq","toy",0],
+["Backdoor Intro","Sensation",2,1,"Slow, relaxed, lots of lube and talking.","Lube always, start small, stop on any pain.",40,"b","lube",0],
+["Praise Kink","Mind",1,1,"Steady, specific compliments that build confidence.","Use words they actually like.",20,"bq","",0],
+["Dirty Talk","Mind",1,1,"Say what you will do and what you want.","Agree on vocabulary, skip insults.",15,"bq","",0],
+["Teasing & Edging","Mind",2,1,"Build them up, pull back, repeat.","Agree on a cap on frustration.",40,"bq","",0],
+["Mild Humiliation","Mind",3,1,"Playful teasing using negotiated words only.","Negotiated word list, aftercare is a must.",30,"b","",0],
+["Interrogation Scene","Roleplay",2,1,"Question and answer with a power edge.","Agree a break-character word.",35,"bq","",0],
+["Boss & Employee","Roleplay",1,1,"Office power roleplay between adults.","Agree on the script and exit.",30,"bq","",0],
+["Stranger at a Bar","Roleplay",1,2,"Pretend you are meeting for the first time.","Agree who you are and where it ends.",45,"bo","",0],
+["Teacher & Student","Roleplay",2,1,"Adult-only roleplay, no age or grade cues.","Characters are adults, say so upfront.",30,"bq","",0],
+["Doctor & Patient","Roleplay",1,1,"Playful exam setup.","Keep it clearly fictional.",30,"bq","",0],
+["Chase & Capture","Roleplay",3,3,"Playful pursuit and being caught, all agreed.","Negotiate everything, safeword, no real fear.",35,"bo","",1],
+["Resistance Scene (CNC)","Roleplay",3,3,"Pre-negotiated scene where no is part of the script.","Hard to do safely: trusted partner, safeword, non-verbal signal, aftercare.",60,"b","",1]
+];
+const IT=[...P.map((x,i)=>({id:"p"+i,k:0,n:x[0],c:x[1],e:x[2],d:x[3],tip:x[4],m:x[5],pl:x[6],risk:0,pr:"",cnc:0})),
+...K.map((x,i)=>({id:"k"+i,k:1,n:x[0],c:x[1],risk:x[2],e:x[3],d:x[4],tip:x[5],m:x[6],pl:x[7],pr:x[8],cnc:x[9]}))];
+const byId=id=>IT.find(x=>x.id===id);
+const MODS=[["Slow Burn","10 minutes, no rushing anything.",1],["Eye Contact","Hold it for the first 2 minutes.",1],["Whisper Only","No normal-volume talking.",1],["Playlist","Pick the soundtrack together first.",1],["Lights Low","Candles or dim light only.",2],["Switch It","Change position every 5 minutes.",3],["Different Room","Anywhere but the bedroom.",3],["Praise Only","Only positive words all scene.",3],["Narrate","Describe what you want out loud.",4],["Rules Round","Set 3 rules before you start.",4],["No Hands","Lead with everything but hands.",5],["Silent Challenge","No words, only signals.",5],["Mirror","Near a mirror, watch together.",6]];
+const TIERS={1:1,2:3,3:6},KL={1:2,2:4,3:7};
+const TT=["Rookie","Charmer","Explorer","Smooth","Skilled","Conductor","Maestro","Architect","Legend","Mythic"];
+const PATH={Intimate:"Connection",Slow:"Connection",Playful:"Adventure",Athletic:"Adventure",Control:"Control",Bondage:"Bondage",Sensation:"Sensation",Mind:"Mind",Roleplay:"Roleplay"};
+const PATHS=["Connection","Adventure","Control","Bondage","Sensation","Mind","Roleplay"];
+const GEAR={collar:"Collar",blindfold:"Blindfold",ties:"Soft ties",cuffs:"Cuffs",bar:"Spreader bar",rope:"Rope + shears",ice:"Ice",feather:"Feather",oil:"Massage oil",candle:"Low-temp candle",flogger:"Soft flogger",toy:"Vibe / wand",lube:"Lube"};
+const MOOD={tender:["Intimate","Slow","Mind"],playful:["Playful","Roleplay"],intense:["Athletic","Control","Sensation"],dominant:["Control","Bondage","Mind","Sensation"]};
+// ---------- STATE ----------
+let S=null;try{S=JSON.parse(localStorage.getItem("sutra2")||"null")}catch(e){}
+S=S||{xp:0,log:[],partners:[],props:{},ach:[],mu:[],asks:[],mc:{d:"",ids:[]},pin:""};
+S.enc=S.enc||[];S.fav=S.fav||[];S.me=S.me||{n:"",a:""};
+const save=()=>{try{localStorage.setItem("sutra2",JSON.stringify(S))}catch(e){}};
+const lvl=s=>Math.floor(s.xp/50)+1;
+const day=t=>new Date(t).toDateString();
+const hr=new Date().getHours();
+let view="plan",libTab="p",sp=-1,res=null,run=null,unlocked=false;
+let ctx={partner:"",time:30,where:"bed",energy:(hr>=23||hr<6)?1:2,mood:"playful"};
+const part=n=>S.partners.find(p=>p.n===n);
+const sess=n=>{const p=part(n);return S.log.filter(l=>l.partner===n).length+S.enc.filter(e=>e.partner===n).length+(p?(+p.hc||0):0)};
+function closeness(p){const n=sess(p.n),m=+p.hm||0;return Math.round(40*(1-Math.exp(-m/12))+60*(1-Math.exp(-n/15)))}
+function cLabel(c){return c<25?"Fresh":c<50?"Familiar":c<75?"Close":"Inner circle"}
+function odds(p,it){const a=p.k[it.id];if(a==="n")return 0;if(a==="y")return 90;if(a==="m")return 55;let o=25+closeness(p)*0.35;const cl=S.log.filter(l=>l.partner===p.n&&byId(l.id).c===it.c);if(cl.length>=2)o+=(cl.reduce((x,l)=>x+l.rate,0)/cl.length-2)*15;o-=(it.risk-1)*8;if(it.cnc)o-=15;const yes=Object.keys(p.k).filter(k=>p.k[k]==="y"&&byId(k).c===it.c).length;o+=Math.min(15,yes*5);return Math.max(3,Math.min(85,Math.round(o)))}
+function lastEnc(n){const t=[...S.log.filter(l=>l.partner===n).map(l=>l.t),...S.enc.filter(e=>e.partner===n).map(e=>e.t)];return t.length?Math.max(...t):0}
+const todayLogs=()=>S.log.filter(l=>day(l.t)===day(Date.now()));
+const pathXP=p=>S.log.filter(l=>PATH[byId(l.id).c]===p).reduce((a,l)=>a+l.xp,0);
+const modsAvail=()=>MODS.map((m,i)=>i).filter(i=>lvl(S)>=MODS[i][2]||S.mu.includes(i));
+function streak(){const d=[...new Set(S.log.map(l=>day(l.t)))].map(x=>new Date(x).getTime()).sort((a,b)=>b-a);if(!d.length)return 0;let c=1;for(let i=1;i<d.length;i++){if(d[i-1]-d[i]<=86400000*1.5)c++;else break}return c}
+// ---------- GATES + SCORING ----------
+function libReason(it){const L=lvl(S);if(!it.k&&L<TIERS[it.e])return "Reach Lv "+TIERS[it.e];if(it.k&&L<KL[it.risk])return "Reach Lv "+KL[it.risk];if(it.pr&&!S.props[it.pr])return "Needs: "+GEAR[it.pr];return ""}
+function gate(it,pn){
+ const r=libReason(it);if(r)return r;
+ if(!it.k)return "";
+ if(!pn)return "Pick a partner";
+ const p=part(pn);if(!p)return "Pick a partner";
+ const a=p.k[it.id];
+ if(a==="n")return "Partner said no";
+ if(!a)return "Ask first";
+ if(it.cnc&&a!=="y")return "Needs a clear yes";
+ if(it.risk>=2&&sess(pn)<2)return "Build rapport (2 sessions)";
+ if(it.risk>=3&&sess(pn)<6)return "Build rapport (6 sessions)";
+ if(it.risk>=3&&!p.safe)return "Set a safeword first";
+ return "";
+}
+function score(it,c){
+ if(gate(it,c.partner)||it.m>c.time)return null;
+ if(c.where==="bed"&&!it.pl.includes("b"))return null;
+ if(c.where==="quiet"&&!it.pl.includes("q"))return null;
+ let s=50,why=[];
+ s-=Math.abs(it.e-c.energy)*10;if(it.e<=c.energy)why.push("fits your energy");
+ if(MOOD[c.mood].includes(it.c)){s+=15;why.push("matches the mood")}
+ const hist=S.log.filter(l=>(!c.partner||l.partner===c.partner)&&l.id===it.id);
+ if(!hist.length){s+=20;why.push("new"+(c.partner?" for "+c.partner:""))}
+ else if((Date.now()-hist[hist.length-1].t)/864e5<7)s-=15;
+ const cl=S.log.filter(l=>(!c.partner||l.partner===c.partner)&&byId(l.id).c===it.c);
+ if(cl.length>=2){const avg=cl.reduce((a,l)=>a+l.rate,0)/cl.length;s+=(avg-2)*12;if(avg>=2.4)why.push("rated high before")}
+ const wk=S.log.filter(l=>Date.now()-l.t<7*864e5);
+ if(S.log.length&&!wk.some(l=>byId(l.id).c===it.c)){s+=8;why.push("variety bonus")}
+ if(it.k&&c.partner&&part(c.partner).k[it.id]==="y"){s+=10;why.push("they said yes")}
+ return {s:Math.max(5,Math.min(99,Math.round(s))),why};
+}
+function plan(){
+ const out=[];IT.forEach(it=>{const r=score(it,ctx);if(r)out.push({it,s:r.s,why:r.why})});
+ out.sort((a,b)=>b.s-a.s);
+ const pick=[],seen=new Set();
+ for(const o of out){if(!seen.has(o.it.c)){pick.push(o);seen.add(o.it.c)}if(pick.length===3)break}
+ for(const o of out){if(pick.length>=3)break;if(!pick.includes(o))pick.push(o)}
+ res=pick;render();
+}
+// ---------- MISSIONS ----------
+const MP=[["ask","Ask a partner about something new",8,()=>S.asks.some(t=>day(t)===day(Date.now()))],
+["new","Do something new for a partner",8,()=>todayLogs().some(l=>l.nov)],
+["remix","Run a scene with a modifier",8,()=>todayLogs().some(l=>l.mod!=null)],
+["after","Finish a scene with full aftercare",10,()=>todayLogs().some(l=>l.after)],
+["cat","Try a category you skipped this week",8,()=>todayLogs().some(l=>l.fresh)]];
+function missions(){const seed=Math.floor(Date.now()/864e5);return [0,1,2].map(i=>MP[(seed+i)%5])}
+function checkMissions(){
+ const d=day(Date.now());if(S.mc.d!==d)S.mc={d,ids:[]};
+ let msg="";
+ missions().forEach(m=>{if(!S.mc.ids.includes(m[0])&&m[3]()){S.mc.ids.push(m[0]);S.xp+=m[2];msg+="\nMission done: "+m[1]+" +"+m[2]}});
+ return msg;
+}
+// ---------- ACHIEVEMENTS ----------
+const ACH=[
+["First Move","Log your first scene",()=>S.log.length>=1],
+["Five Deep","Try 5 different things",()=>new Set(S.log.map(l=>l.id)).size>=5],
+["Ten Club","Try 10 different things",()=>new Set(S.log.map(l=>l.id)).size>=10],
+["Range","Try 5 categories",()=>new Set(S.log.map(l=>byId(l.id).c)).size>=5],
+["Talker","Ask 10 kink questions",()=>S.asks.length>=10],
+["Aftercare Pro","5 scenes with aftercare",()=>S.log.filter(l=>l.after).length>=5],
+["Remixer","5 scenes with modifiers",()=>S.log.filter(l=>l.mod!=null).length>=5],
+["Tier 1 Clear","Every tier 1 position",()=>P.every((p,i)=>p[2]>1||S.log.some(l=>l.id==="p"+i))],
+["Trusted","10 sessions with one person",()=>S.partners.some(p=>sess(p.n)>=10)],
+["Safe Hands","Safeword set for 3 partners",()=>S.partners.filter(p=>p.safe).length>=3],
+["Path Master","Reach level 5 in any path",()=>PATHS.some(p=>Math.floor(pathXP(p)/60)+1>=5)],
+["Legend","Reach level 10",()=>lvl(S)>=10]
+];
+// ---------- RUN ----------
+function gates(it){if(it.risk<2)return[];const g=["Limits and stop words agreed","Safeword and a non-verbal signal set","Aftercare planned and I will do it"];if(it.cnc)g.push("Negotiated in a calm non-sexual moment, not in the heat of it","Mid-scene check-in planned, either of us can end it any time");return g}
+function go(i){const o=res[i];run={id:o.it.id,mod:null,partner:ctx.partner,rate:2,chk:false,g:gates(o.it).map(()=>false)};view="run";render()}
+function roll(){const a=modsAvail();run.mod=a[Math.random()*a.length|0];render()}
+function logIt(){
+ const it=byId(run.id),pn=run.partner;
+ const nov=!S.log.some(l=>l.partner===pn&&l.id===it.id);
+ const wk=S.log.filter(l=>Date.now()-l.t<7*864e5);
+ const fresh=!wk.some(l=>byId(l.id).c===it.c);
+ const cats=new Set(wk.map(l=>byId(l.id).c));cats.add(it.c);
+ let base=10+(it.k?it.risk*5:0)+(nov?10:0)+(run.mod!=null?5:0)+(run.rate===3?5:0)+(it.risk>=2?10:0)+(it.risk<2&&run.chk?5:0);
+ const xp=Math.round(base*(1+0.1*Math.min(5,cats.size))*(it.cnc?1.5:1));
+ const old=lvl(S);
+ S.log.push({t:Date.now(),id:it.id,mod:run.mod,partner:pn,rate:run.rate,xp,nov,fresh,after:it.risk>=2});
+ S.xp+=xp;
+ let msg="+"+xp+" XP";
+ msg+=checkMissions();
+ if(lvl(S)>old)msg+="\nLEVEL UP: "+lvl(S);
+ const na=ACH.filter(a=>!S.ach.includes(a[0])&&a[2]());na.forEach(a=>{S.ach.push(a[0]);msg+="\nAchievement: "+a[0]});
+ if(Math.random()<.3){const locked=MODS.map((m,i)=>i).filter(i=>lvl(S)<MODS[i][2]&&!S.mu.includes(i));if(locked.length){const u=locked[Math.random()*locked.length|0];S.mu.push(u);msg+="\nLOOT DROP: modifier unlocked: "+MODS[u][0]}}
+ save();alert(msg);run=null;res=null;view="plan";render();
+}
+// ---------- PEOPLE ----------
+function addP(){const v=$("np").value.trim();if(v&&!S.partners.find(p=>p.n===v)){S.partners.push({n:v,safe:"",k:{},hc:0,hm:0});sp=S.partners.length-1;save();render()}}
+function rmP(i){if(confirm("Remove?")){S.partners.splice(i,1);sp=-1;save();render()}}
+function ans(id,v){const p=S.partners[sp];const first=!p.k[id];p.k[id]=v;if(first){S.xp+=3;S.asks.push(Date.now());const m=checkMissions();if(m)alert(m.trim())}save();render()}
+function setSafe(v){S.partners[sp].safe=v.trim();save()}
+function setHist(f,v){S.partners[sp][f]=Math.max(0,+v||0);save();render()}
+function addEnc(){const d=$("ed").value;let t=d?new Date(d+"T12:00:00").getTime():Date.now();if(isNaN(t))t=Date.now();S.enc.push({t,partner:S.partners[sp].n,rate:+$("er").value});save();render()}
+function delEnc(i){S.enc.splice(i,1);save();render()}
+// ---------- PERSONALITY ENGINE (local only: no network, no AI calls, no analytics) ----------
+const REG=[];
+function add(ev,rar,arr,o){const tag=(o&&o.tag)||"";arr.forEach((t,i)=>REG.push(Object.assign({id:ev+"."+rar+"."+tag+i,ev,rar,text:t},o||{})))}
+add("loading","common",[
+"Consulting the bedroom experts…","Cross-referencing the ancient archives…","Calculating the logistics nobody asked us to calculate…","Running a quick feasibility study…","The committee has reached a position.","Peer review is going suspiciously well.","Eliminating options that require a physics degree…","Asking the algorithm to keep things professional…","Checking compatibility with the laws of physics…","Negotiating with gravity…","The research department has requested privacy.","Performing extremely unnecessary calculations…","Loading questionable expertise…","Consulting absolutely no qualified professionals…","The spreadsheet has become uncomfortable.","Your request has reached upper management.","Reviewing the operational constraints…","Running simulations. The simulations are blushing.","The algorithm is trying to act normal.","Finalizing the recommendations. Allegedly.",
+"The bedroom think tank is in session.","Checking the Kama Sutra's release notes…","Recalculating the awkwardness coefficient…","Verifying that humans can, in fact, do this…","The interns have been sent home.","Consulting the Department of Applied Romance…","The compliance officer has left the chat.","Checking whether this requires a warm-up.","Asking science to mind its own business…","The algorithm would like to clarify that it is a professional.","Initiating Operation: Let's Not Make This Weird.","Running quality assurance on questionable decisions…","The research paper is suspiciously short.","Checking the user manual. There isn't one.","The board has unanimously approved doing less paperwork.","Assembling the Council of Questionable Wisdom.","The calculations are fine. The delivery is pending.","Checking the fine print on gravity.","The AI has requested plausible deniability.","Making sure the recommendation isn't just a yoga pose."]);
+add("primary","common",["Consult the council","Surprise me","Deploy recommendation","Roll for initiative","Run it back","Try another configuration"]);
+add("regen_btn","common",["The board requests another option.","Reopen negotiations","Back to the drawing board","One more candidate","Reroll the dice","The first draft was exploratory.","We can do better. Probably.","Request a second opinion","Escalate to management"]);
+add("regen_btn","common",["Skill issue. Regenerate."],{playful:true,tag:"p"});
+add("fav_btn","common",["Save to the roster","Archive this discovery","Keep this one","Add to the hall of fame","Save for the next board meeting","Filed under: promising","This one made the shortlist"]);
+add("first_session","common",["Welcome to ShagGPT. Please lower your expectations of our professionalism.","Your onboarding begins now. HR has concerns."]);
+add("first_result","common",["Congratulations. You've successfully outsourced a decision.","The algorithm has made its first contribution to society."]);
+add("first_fav","common",["Added to the archives. Historians will be confused.","A promising candidate has entered the roster."]);
+add("regen_few","common",["Exploration is healthy. Infinite indecision is a separate feature.","We're approaching the director's cut.","The research phase is going exceptionally well."]);
+add("regen_many","uncommon",["We're now on version 7.0 of a decision that started at version 1.0.","The product roadmap did not anticipate this many iterations.","At this point, you're conducting a randomized controlled trial."]);
+add("fav_many","uncommon",["Your shortlist is beginning to resemble a procurement exercise.","The roster is growing. No hiring freeze in sight.","You have officially entered curator mode."]);
+add("filters_many","uncommon",["The specification is evolving in real time.","Stakeholder alignment remains elusive."]);
+add("repeat_visit","uncommon",["Back for another consultation?","Your department has reconvened.","A returning researcher. We respect the commitment."]);
+add("all_seen","rare",["You've completed the field research. A peer-reviewed publication is unlikely.","There are no more candidates. Touch grass. Respectfully."]);
+add("offline_session","rare",["No cloud. No problem. The department operates independently."]);
+add("secret_first","legendary",["You've discovered the back office. Please do not touch the suspicious cables."]);
+add("varied","legendary",["Your commitment to exploratory research has been recognized by absolutely nobody."]);
+add("no_results","common",["Nothing fits those constraints. The algorithm respects your standards.","The search committee has returned an empty folder.","No viable candidates. Even the algorithm has boundaries.","The filters are doing their job a little too well.","No matches this round. Try relaxing a non-essential filter.","The shortlist is empty, but at least the standards are intact."]);
+add("error","common",["Well, that was a plot twist.","Something went sideways. Not a recommendation.","The algorithm has misplaced its clipboard.","That didn't work. Your preferences are still here.","The software has briefly forgotten its profession."]);
+add("offline","common",["Wi-Fi has left the chat.","Operating in offline mode. The committee will proceed with available resources.","No signal. Still plenty of opinions.","Airplane mode: enabled. Standards: unchanged."]);
+const CMD={"sudo shag":"Permission granted. Professionalism revoked.","42":"The answer to life, the universe, and this extremely specific question.","debug mode":"Diagnostics complete. You are still the user.","touch grass":"Recommendation accepted. The app will be here later.","sudo rm -rf /":"Absolutely not. We're an app, not a villain origin story.","help":"Have you tried turning the expectations off and on again?"};
+const PA={"First Contact":["Generate your first scene","The consultation has begun."],"Version Control":["Regenerate several times in a session","Your iteration count is concerning."],"Archivist":["Save a few to the roster","A respectable body of research."],"The Explorer":["View several distinct suggestions","The map grows more questionable."],"Filter Wizard":["Change several scenario settings","Requirements engineering: mastered."],"QA Department":["Hit an error and recover","You found a bug. The bug found a home."],"Secret Service":["Discover a back-office command","Access granted. Clearance remains imaginary."],"Offline Operator":["Use the app offline","Self-sufficient. We respect that."],"Completionist":["View every unlocked suggestion","You've seen everything. The algorithm needs a holiday."]};
+const TH={regen:5,fav:3,explore:8,filters:6,regenEgg:7,favEgg:3,filterEgg:4,varied:6};
+const WT={common:10,uncommon:4,rare:1.5,legendary:.5},CD={common:0,uncommon:3,rare:8,legendary:20};
+let PR={sessions:0,n:0,last:{},recent:[],ach:[],seen:[],flags:{},drama:true,jokes:true};
+try{const x=JSON.parse(localStorage.getItem("shaggpt_p")||"null");if(x&&typeof x==="object")PR=Object.assign(PR,x)}catch(e){}
+const persist=()=>{try{localStorage.setItem("shaggpt_p",JSON.stringify(PR))}catch(e){}};
+const PS={seen:new Set(),seenItems:new Set(),regens:0,favs:0,filters:0,types:new Set(),errored:false,banner:null,loading:false,loadMsg:"",err:null,offlineUsed:false,cmdOut:"",btn:"",regLabel:"",favLabel:""};
+let rnd=Math.random,finishFn=null;
+function pick(ev,cond){
+ const pool=REG.filter(m=>m.ev===ev&&(!cond||cond(m)));
+ const ok=pool.filter(m=>(PR.n-(PR.last[m.id]===undefined?-1e9:PR.last[m.id]))>=(CD[m.rar]||0));
+ let c=ok.filter(m=>!PR.recent.includes(m.id));
+ if(!c.length)c=ok.filter(m=>PR.recent[PR.recent.length-1]!==m.id);
+ if(!c.length)c=ok;
+ if(!c.length)return null;
+ const w=c.map(m=>(WT[m.rar]||1)*(PS.seen.has(m.id)?1:3));
+ let r=rnd()*w.reduce((a,b)=>a+b,0),i=0;
+ while(i<c.length-1&&(r-=w[i])>0)i++;
+ const m=c[i];PR.n++;PR.last[m.id]=PR.n;PR.recent.push(m.id);if(PR.recent.length>24)PR.recent.shift();PS.seen.add(m.id);persist();return m;
+}
+function say(m){if(!PR.jokes||!m)return;PS.banner={t:m.text}}
+const TQ=[];let tbusy=false;
+function toast(t){TQ.push(t);if(!tbusy)nextToast()}
+function nextToast(){const e=document.getElementById("toast"),t=TQ.shift();if(!t){tbusy=false;if(e)e.style.display="none";return}tbusy=true;if(e){e.textContent=t;e.style.display="block"}setTimeout(nextToast,3800)}
+function unlock(n){if(PR.ach.includes(n)||!PA[n])return;PR.ach.push(n);persist();toast("Achievement: "+n+". "+PA[n][1])}
+function evt(t){PS.types.add(t);if(PS.types.size>=TH.varied&&!PR.flags.varied){PR.flags.varied=1;persist();const m=pick("varied");if(m&&PR.jokes)toast(m.text)}}
+function seq(n){const ch=[];for(let i=0;i<n;i++){const m=pick("loading",x=>!ch.some(c=>c.id===x.id));if(m)ch.push(m)}return ch.map(m=>m.text)}
+function sub(it){return it.k?({1:"Low-risk feature. Still needs a quick check-in.",2:"Requires prior configuration (negotiation).",3:"Full protocol required. No shortcuts."})[it.risk]:({1:"A reliable release candidate.",2:"Beta build. Read the notes.",3:"Experimental build. Read the documentation."})[it.e]}
+function build(){
+ if(PS.loading&&finishFn){finishFn();return}
+ const kind=res?"regen":"first";
+ if(kind==="regen"){PS.regens++;evt("regen")}else evt("generate");
+ PS.banner=null;PS.err=null;
+ const fin=()=>{clearTimeout(PS.lt);PS.loading=false;finishFn=null;try{plan();afterBuild(kind)}catch(e){PS.errored=true;const m=pick("error");PS.err=m?m.text:"That didn't work. Your preferences are still here.";render()}};
+ if(!PR.drama){fin();return}
+ const ms=seq(3);PS.loading=true;finishFn=fin;let i=0;
+ const step=()=>{PS.loadMsg=ms[i]||"Working…";render();i++;PS.lt=setTimeout(i<ms.length?step:fin,700)};
+ step();
+}
+function afterBuild(kind){
+ if(PS.errored){unlock("QA Department");PS.errored=false}
+ res.forEach(o=>{PS.seenItems.add(o.it.id);if(!PR.seen.includes(o.it.id))PR.seen.push(o.it.id)});
+ if(res.length)unlock("First Contact");
+ if(PS.regens>=TH.regen)unlock("Version Control");
+ if(PR.seen.length>=TH.explore)unlock("The Explorer");
+ const av=IT.filter(x=>!libReason(x)),all=av.length&&av.every(x=>PR.seen.includes(x.id));
+ if(all)unlock("Completionist");
+ const off=typeof navigator!=="undefined"&&navigator.onLine===false;
+ if(off){PS.offlineUsed=true;unlock("Offline Operator")}
+ let m=null;
+ if(!res.length)m=pick("no_results");
+ else if(!PR.flags.firstResult){PR.flags.firstResult=1;m=pick("first_result")}
+ else if(off)m=pick("offline");
+ else if(all&&!PS.allSaid){PS.allSaid=1;m=pick("all_seen")}
+ else if(PS.regens>=TH.regenEgg)m=pick("regen_many");
+ else if(kind==="regen"&&PS.regens>=3)m=pick("regen_few");
+ PS.banner=null;say(m);
+ const pl=pick("regen_btn",x=>!x.playful||(ctx.mood!=="tender"&&ctx.energy>=2));PS.regLabel=pl?pl.text:"Run it back";
+ const pb=pick("primary");PS.btn=pb?pb.text:"Run it back";
+ persist();render();
+}
+function ctxSet(k,v){ctx[k]=v;if(k==="partner")res=null;PS.filters++;evt("filters");
+ if(PS.filters>=TH.filters)unlock("Filter Wizard");
+ PS.banner=null;
+ if(PS.filters===TH.filterEgg||(PS.filters>TH.filterEgg&&PS.filters%5===0))say(pick("filters_many"));
+ render()}
+function loosen(){ctx.where="any";ctx.time=120;build()}
+function fav(id){
+ if(S.fav.includes(id))return;
+ S.fav.push(id);PS.favs++;save();evt("fav");
+ if(S.fav.length>=TH.fav)unlock("Archivist");
+ PS.banner=null;let m=null;
+ if(!PR.flags.firstFav){PR.flags.firstFav=1;m=pick("first_fav")}
+ else if(PS.favs>=TH.favEgg)m=pick("fav_many");
+ say(m);
+ const l=pick("fav_btn");PS.favLabel=l?l.text:"Save to the roster";
+ persist();render();
+}
+function unfav(id){S.fav=S.fav.filter(x=>x!==id);save();evt("unfav");render()}
+function savedCard(){if(!S.fav.length)return"";return `<div class="card"><b>The roster (saved)</b>`+S.fav.map(id=>{const it=byId(id);return it?`<div class="q"><div class="n">${it.n}<div class="mut">${it.c}</div></div><button onclick="unfav('${id}')">Remove</button></div>`:""}).join("")+"</div>"}
+function cmdRun(raw){
+ const k=String(raw).toLowerCase().trim().replace(/\s+/g," ");
+ if(Object.prototype.hasOwnProperty.call(CMD,k)){
+  if(!PR.flags.secret){PR.flags.secret=1;persist();unlock("Secret Service");const l=pick("secret_first");if(l&&PR.jokes)toast(l.text)}
+  evt("secret");return CMD[k]}
+ return "Unrecognized command. Nothing was executed. Nothing ever is.";
+}
+function runCmd(){const e=$("cmd");PS.cmdOut=cmdRun(e.value);e.value="";render()}
+function resetPers(){if(!confirm("Reset Easter eggs, software achievements and message history?"))return;const d=PR.drama,j=PR.jokes;PR={sessions:0,n:0,last:{},recent:[],ach:[],seen:[],flags:{},drama:d,jokes:j};persist();PS.seen.clear();PS.seenItems.clear();PS.banner=null;PS.cmdOut="";render()}
+function setMe(f,v){S.me[f]=v===""?"":Math.max(0,+v||0);save();render()}
+function standing(){
+ const n=S.me.n;let h="";
+ if(n!==undefined&&n!==""){
+  const mx=Math.max(20,n*1.15),pos=v=>Math.min(100,v/mx*100);
+  const tier=n>14.5?"Above the highest national average listed":n>=9?"At or above the world average":n>3?"Above the India average, below the world average":"At or below the India average";
+  h+=`<div style="margin-top:10px"><b>${tier}</b></div><div style="position:relative;height:34px;margin:8px 0"><div class="bar" style="height:8px;margin-top:20px"><i style="width:${pos(n)}%"></i></div>${[[3,"India 3"],[9,"World 9"],[14.5,"Top 14.5"]].map(([v,l])=>`<span class="mut" style="position:absolute;left:${pos(v)}%;top:0;font-size:10px;transform:translateX(-50%);white-space:nowrap">${l}</span>`).join("")}</div>`}
+ if(S.me.a!==undefined&&S.me.a!=="")h+=`<div class="mut">First time at ${S.me.a}. National mean for men 20-24 is 19.5 (NFHS-4).</div>`;
+ return h}
+function onOpen(){PR.sessions++;const off=typeof navigator!=="undefined"&&navigator.onLine===false;say(off?pick("offline"):PR.sessions===1?pick("first_session"):pick("repeat_visit"));persist();render()}
+if(typeof window!=="undefined"&&window.addEventListener){
+ window.addEventListener("offline",()=>{PS.banner=null;say(pick("offline"));render()});
+ window.addEventListener("online",()=>{if(PS.offlineUsed){PS.offlineUsed=false;PS.banner=null;say(pick("offline_session"))}render()});
+}
+if(typeof window!=="undefined")window.__shag={pick,REG,PR,PS,cmdRun,setRandom:f=>{rnd=f}};
+
+// ---------- UI ----------
+const $=id=>document.getElementById(id);
+function cov(){$("cover").style.display="block"}
+function tryPin(){if($("pi").value===S.pin){unlocked=true;render()}else alert("Nope")}
+function setPin(){S.pin=$("pn").value;save();alert(S.pin?"PIN set":"PIN cleared")}
+function exp(){const b=new Blob([JSON.stringify(S)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(b);a.download="shaggpt-backup.json";a.click()}
+function dots(n){return "●".repeat(n)+"○".repeat(Math.max(0,3-n))}
+function card(it,extra){return `<span class="tag">${it.c}</span><span class="tag hot">${it.k?"risk "+dots(it.risk):"energy "+dots(it.e)}</span><span class="tag">${it.m} min</span>${extra||""}`}
+function render(){
+ const L=lvl(S);
+ $("lv").textContent="Lv "+L+" "+TT[Math.min(L-1,9)]+" | "+S.xp+" XP";
+ $("xpbar").style.width=(S.xp%50)/50*100+"%";
+ $("sub").textContent="Streak "+streak()+"d";
+ const m=$("main");
+ $("nav").innerHTML=[["plan","Plan"],["lib","Library"],["ppl","People"],["roster","Roster"],["stats","Stats"]].map(([k,n])=>`<button class="${view===k||(view==="run"&&k==="plan")?"on":""}" onclick="view='${k}';render()">${n}</button>`).join("");
+ if(S.pin&&!unlocked){m.innerHTML='<div class="card"><h2>Locked</h2><input id="pi" type="password" inputmode="numeric" placeholder="PIN"><div class="row"><button class="pri" onclick="tryPin()">Unlock</button></div></div>';return}
+if(view==="plan"){
+  const ms=missions(),d=day(Date.now());
+  let h=`<div class="card"><b>Today's missions</b>${ms.map(x=>`<div class="q"><span>${S.mc.d===d&&S.mc.ids.includes(x[0])?"✅":"⬜"}</span><div class="n">${x[1]}</div><span class="mut">+${x[2]}</span></div>`).join("")}</div>
+  <div class="card"><b>Scenario</b>
+  <div class="row"><select aria-label="Who" onchange="ctxSet('partner',this.value)"><option value="">Solo / no one specific</option>${S.partners.map(p=>`<option ${ctx.partner===p.n?"selected":""}>${p.n}</option>`).join("")}</select></div>
+  <div class="row"><select aria-label="Time" onchange="ctxSet('time',+this.value)">${[[15,"Quickie: 15 min"],[30,"30 min"],[60,"An hour"],[120,"All night"]].map(([v,t])=>`<option value="${v}" ${ctx.time===v?"selected":""}>${t}</option>`).join("")}</select>
+  <select aria-label="Where" onchange="ctxSet('where',this.value)">${[["bed","Bed only"],["any","Anywhere in the house"],["quiet","Quiet (people nearby)"]].map(([v,t])=>`<option value="${v}" ${ctx.where===v?"selected":""}>${t}</option>`).join("")}</select></div>
+  <div class="row"><select aria-label="Energy" onchange="ctxSet('energy',+this.value)">${[[1,"Low energy"],[2,"Medium energy"],[3,"High energy"]].map(([v,t])=>`<option value="${v}" ${ctx.energy===v?"selected":""}>${t}</option>`).join("")}</select>
+  <select aria-label="Mood" onchange="ctxSet('mood',this.value)">${["tender","playful","intense","dominant"].map(v=>`<option ${ctx.mood===v?"selected":""}>${v}</option>`).join("")}</select></div>
+  <div class="row"><button class="pri" onclick="build()">${PS.loading?"Skip the ceremony":(res?(PS.btn||"Run it back"):"Roll for initiative")}</button></div></div>`;
+  if(PS.loading)h+=`<div class="card banner" role="status" aria-live="polite"><div class="mut">Flavor text, not real computation. Tap Skip to bypass.</div>${PS.loadMsg}</div>`;
+  else if(PS.err)h+=`<div class="card banner" role="alert"><b>${PS.err}</b><div class="row"><button class="pri" onclick="build()">Try again</button></div></div>`;
+  else if(PS.banner)h+=`<div class="card banner" role="status">${PS.banner.t}</div>`;
+  if(ctx.partner){const pp=part(ctx.partner);const un=pp?IT.filter(x=>x.k&&!libReason(x)&&!pp.k[x.id]).length:0;if(un)h+=`<div class="card mut">${un} kinks you could still ask ${ctx.partner} about. Each answer is +3 XP, a no costs nothing. See People.</div>`}
+  if(res&&!PS.loading){
+   if(!res.length)h+=`<div class="card">No match for the current settings. Add gear in Stats, ask questions in People, or loosen the time and place.<div class="row"><button class="pri" onclick="loosen()">Loosen place and time</button></div></div>`;
+   res.forEach((o,i)=>{const sv=S.fav.includes(o.it.id);h+=`<div class="card"><span class="match">${o.s}%</span><h2>${o.it.n}</h2><div class="mut">${sub(o.it)}</div>${card(o.it)}<p>${o.it.d}</p><p class="mut">${o.why.join(" | ")||"solid option"}</p><div class="row"><button class="pri" onclick="go(${i})">Run this</button><button ${sv?"disabled":""} onclick="fav('${o.it.id}')">${sv?"Saved ✓":(PS.favLabel||"Save to the roster")}</button></div></div>`});
+   if(res.length)h+=`<div class="row"><button onclick="build()">${PS.regLabel||"Run it back"}</button></div><div class="mut" style="margin-top:8px">Either of you can stop or change direction at any time. No explanation needed.</div>`;
+  }
+  m.innerHTML=h;
+ }else if(view==="run"&&run){
+  const it=byId(run.id),g=gates(it);
+  const ok=g.every((_,i)=>run.g[i]);
+  m.innerHTML=`<div class="card"><h2>${it.n}</h2>${card(it)}${run.partner?`<span class="tag">with ${run.partner}</span>`:""}<p>${it.d}</p><p class="mut">Tip: ${it.tip}</p></div>
+  <div class="card"><b>Flow</b><p class="mut">1. Warm-up: 5 min kissing and slow touch<br>2. Main: ${it.n}<br>3. Cool-down: water, snuggle, talk about what worked</p>
+  ${run.mod!=null?`<div class="chk" style="display:block"><b>${MODS[run.mod][0]}</b><div class="mut">${MODS[run.mod][1]}</div></div>`:""}
+  ${it.cnc?"":`<div class="row"><button onclick="roll()">${run.mod!=null?"Reroll":"Add"} modifier (+5)</button></div>`}</div>
+  <div class="card">${g.length?"<b>Before you start (required)</b>"+g.map((t,i)=>`<label class="chk"><input type="checkbox" ${run.g[i]?"checked":""} onchange="run.g[${i}]=this.checked;render()"><span>${t}</span></label>`).join(""):`<label class="chk"><input type="checkbox" ${run.chk?"checked":""} onchange="run.chk=this.checked"><span>Quick check-in done: both into it, comfortable (+5)</span></label>`}
+  <div class="mut" style="margin-top:6px">Stop means stop, any time, no XP lost.</div></div>
+  <div class="card"><b>After</b><div class="row"><select onchange="run.rate=+this.value"><option value="1">Meh</option><option value="2" selected>Good</option><option value="3">Fire (+5)</option></select></div>
+  <div class="row"><button onclick="view='plan';run=null;render()">Cancel</button><button class="pri" ${ok?"":"disabled"} onclick="logIt()">Log it${it.risk>=2?" (aftercare done)":""}</button></div></div>`;
+ }else if(view==="lib"){
+  const list=IT.filter(x=>libTab==="p"?!x.k:x.k);
+  const cats=[...new Set(list.map(x=>x.c))];
+  m.innerHTML=`<div class="pill"><button class="${libTab==="p"?"on":""}" onclick="libTab='p';render()">Positions</button><button class="${libTab==="k"?"on":""}" onclick="libTab='k';render()">Kinks</button></div>`+cats.map(c=>`<div class="mut" style="margin-top:12px">${c.toUpperCase()}</div>`+list.filter(x=>x.c===c).map(x=>{const r=libReason(x);return `<div class="card ${r&&r.startsWith("Reach")?"lock":""}"><b>${r&&r.startsWith("Reach")?"Locked":x.n}</b> ${r?`<span class="tag">${r}</span>`:""}${S.log.some(l=>l.id===x.id)?'<span class="tag" style="color:var(--ok)">tried</span>':""}${r&&r.startsWith("Reach")?"":`<div class="mut">${x.d}</div>${x.k?`<div class="mut">Safety: ${x.tip}</div>`:""}${x.cnc?'<div class="mut hot">Gated: clear yes, safeword, 6+ sessions, full negotiation, aftercare.</div>':""}`}</div>`}).join("")).join("");
+ }else if(view==="ppl"){
+  let h=`<div class="card"><b>People</b><div class="mut">Nicknames only, stored on this device.</div>
+  <div class="pill" style="margin-top:8px">${S.partners.map((p,i)=>`<button class="${sp===i?"on":""}" onclick="sp=${i};render()">${p.n}</button>`).join("")}</div>
+  <div class="row"><input id="np" type="text" placeholder="Add nickname"><button class="sm" style="flex:0" onclick="addP()">Add</button></div></div>`;
+  if(sp>=0&&S.partners[sp]){
+   const p=S.partners[sp],n=sess(p.n),st=n<3?"New":n<10?"Regular":"Trusted";
+   const ks=IT.filter(x=>x.k),ans0=ks.filter(x=>p.k[x.id]).length;const nx=ks.filter(x=>lvl(S)>=KL[x.risk]&&!p.k[x.id]).sort((a,b)=>odds(p,b)-odds(p,a)).slice(0,3);
+   h+=`<div class="card"><h2>${p.n}</h2><span class="tag">${st}</span><span class="tag">${n} total</span><span class="tag">closeness ${closeness(p)} ${cLabel(closeness(p))}</span><span class="tag">${ans0}/${ks.length} asked</span>
+   <div class="row"><input type="text" placeholder="Safeword" value="${p.safe}" onchange="setSafe(this.value)"></div>
+   <div class="mut" style="margin-top:10px"><b>Before the app</b>: lifetime totals so the system knows how close you are.</div>
+   <div class="row"><input type="number" min="0" placeholder="Times so far" value="${p.hc||""}" onchange="setHist('hc',this.value)"><input type="number" min="0" placeholder="Months in contact" value="${p.hm||""}" onchange="setHist('hm',this.value)"></div>
+   <div class="mut" style="margin-top:10px"><b>Log an encounter</b> (any date, no scene detail)</div>
+   <div class="row"><input id="ed" type="date" style="background:var(--card2);color:var(--ink);border:0;border-radius:10px;padding:10px"><select id="er"><option value="1">Meh</option><option value="2" selected>Good</option><option value="3">Fire</option></select><button class="sm" style="flex:0" onclick="addEnc()">Add</button></div>
+   ${nx.length?`<div class="mut" style="margin-top:10px"><b>Ask next</b> (best odds first)</div>`+nx.map(x=>`<div class="q"><div class="n">${x.n}</div><span class="mut">~${odds(p,x)}%</span></div>`).join(""):""}
+   <div class="mut" style="margin-top:8px">Ask when you are not in bed: "Would you be into X? Yes, maybe, no are all fine." Every answer earns +3 XP and a no is never penalised. Anything marked no is never suggested.</div>
+   <div class="row"><button class="sm" onclick="rmP(${sp})">Remove person</button></div></div>`;
+   [...new Set(ks.map(x=>x.c))].forEach(c=>{h+=`<div class="card"><b>${c}</b>`+ks.filter(x=>x.c===c).map(x=>{const a=p.k[x.id];return `<div class="q"><div class="n">${x.n}${x.cnc?' <span class="tag hot">CNC</span>':""}${a?"":`<div class="mut">~${odds(p,x)}% likely yes</div>`}</div>${["y","m","n"].map(v=>`<button class="${a===v?"on":""}" onclick="ans('${x.id}','${v}')">${v.toUpperCase()}</button>`).join("")}</div>`}).join("")+"</div>"});
+  }
+  m.innerHTML=h;
+ }else if(view==="roster"){
+  const ps=[...S.partners].sort((a,b)=>lastEnc(b.n)-lastEnc(a.n));
+  const tot=S.partners.reduce((a,p)=>a+sess(p.n),0);
+  let h=savedCard()+`<div class="grid"><div class="stat"><div class="big">${S.partners.length}</div>people</div><div class="stat"><div class="big">${tot}</div>total encounters</div></div>`;
+  if(!ps.length)h+='<div class="card">Add people in the People tab, then enter their lifetime totals.</div>';
+  ps.forEach(p=>{const c=closeness(p),le=lastEnc(p.n);
+   const ev=[...S.log.filter(l=>l.partner===p.n).map(l=>({t:l.t,n:byId(l.id).n,r:l.rate})),...S.enc.map((e,i)=>({t:e.t,n:"Logged encounter",r:e.rate,i,p:e.partner})).filter(e=>e.p===p.n)].sort((a,b)=>b.t-a.t).slice(0,8);
+   h+=`<div class="card"><b>${p.n}</b> <span class="tag">${cLabel(c)}</span><div class="bar"><i style="width:${c}%"></i></div>
+   <div class="mut" style="margin-top:6px">${sess(p.n)} total | ${p.hm||0} months in contact | ${le?"last "+new Date(le).toLocaleDateString():"none logged since install"}</div>
+   ${ev.map(e=>`<div class="q"><div class="n">${new Date(e.t).toLocaleDateString()} · ${e.n}</div><span>${["","😐","🙂","🔥"][e.r]}</span>${e.i!=null?`<button onclick="delEnc(${e.i})">x</button>`:""}</div>`).join("")}</div>`});
+  m.innerHTML=h;
+ }else if(view==="stats"){
+  const u=new Set(S.log.map(l=>l.id)).size;
+  m.innerHTML=`<div class="grid"><div class="stat"><div class="big">${S.log.length}</div>scenes</div><div class="stat"><div class="big">${u}/${IT.length}</div>unlocked & tried</div></div>
+  <div class="card"><b>Skill paths</b>${PATHS.map(p=>{const x=pathXP(p),l=Math.floor(x/60)+1;return `<div class="q"><div style="width:90px">${p}</div><div class="bar" style="flex:1"><i style="width:${x%60/60*100}%"></i></div><div class="mut">Lv ${l}</div></div>`}).join("")}</div>
+  <div class="card"><b>Gear</b><div class="mut">Tick what you own. Scenes needing missing gear are never suggested.</div>${Object.keys(GEAR).map(k=>`<label class="chk"><input type="checkbox" ${S.props[k]?"checked":""} onchange="S.props['${k}']=this.checked;save()"><span>${GEAR[k]}</span></label>`).join("")}</div>
+  <div class="card"><b>Modifiers unlocked</b><div class="mut">Level-ups and loot drops open more. They work with any partner.</div>${modsAvail().map(i=>`<div class="q"><div class="n"><b>${MODS[i][0]}</b><div class="mut">${MODS[i][1]}</div></div></div>`).join("")}</div>
+  <div class="card"><b>Achievements</b>${ACH.map(a=>`<div class="ach ${S.ach.includes(a[0])?"":"off"}"><span>${S.ach.includes(a[0])?"🏆":"🔒"}</span><div><b>${a[0]}</b><div class="mut">${a[1]}</div></div></div>`).join("")}</div>
+  <div class="card"><b>Standing</b><div class="mut">Your numbers vs the only sourced benchmarks available (India 3, world 9, highest country 14.5 lifetime partners). Self-reported surveys, rough context only. Stored on this device.</div>
+  <div class="row"><input type="number" min="0" aria-label="Lifetime partners" placeholder="Lifetime partners" value="${S.me.n}" onchange="setMe('n',this.value)"><input type="number" min="0" aria-label="Age at first time" placeholder="Age at first" value="${S.me.a}" onchange="setMe('a',this.value)"></div>${standing()}</div>
+  <div class="card"><b>Personality</b>
+  <label class="chk"><input type="checkbox" ${PR.jokes?"checked":""} onchange="PR.jokes=this.checked;if(!this.checked)PS.banner=null;persist();render()"><span>Jokes and Easter eggs</span></label>
+  <label class="chk"><input type="checkbox" ${PR.drama?"checked":""} onchange="PR.drama=this.checked;persist()"><span>Dramatic loading (about 2 extra seconds, tap Skip to bypass). Flavor text only, no real computation.</span></label>
+  <div class="row"><button onclick="resetPers()">Reset Easter eggs</button></div></div>
+  <div class="card"><b>Back office</b><div class="mut">A harmless command line. Nothing runs and nothing leaves the device. Try: help</div>
+  <div class="row"><input id="cmd" type="text" aria-label="Back office command" placeholder="command" autocomplete="off" autocapitalize="off" spellcheck="false" onkeydown="if(event.key==='Enter')runCmd()"><button class="sm" style="flex:0" onclick="runCmd()">Run</button></div>
+  <div role="status" aria-live="polite" class="mut" style="margin-top:8px">${PS.cmdOut||""}</div></div>
+  <div class="card"><b>Software achievements</b>${Object.keys(PA).map(k=>`<div class="ach ${PR.ach.includes(k)?"":"off"}"><span>${PR.ach.includes(k)?"🏆":"🔒"}</span><div><b>${k}</b><div class="mut">${PA[k][0]}</div></div></div>`).join("")}</div>
+  <div class="card"><b>Privacy</b><div class="row"><input id="pn" type="password" inputmode="numeric" placeholder="Set PIN"><button class="sm" style="flex:0" onclick="setPin()">Save</button></div>
+  <div class="mut" style="margin-top:6px">Tap the title to disguise the screen as Notes. Double tap to return.</div>
+  <div class="row"><button onclick="exp()">Export backup</button><button onclick="if(confirm('Wipe everything?')){localStorage.removeItem('sutra2');location.reload()}">Reset</button></div></div>`;
+ }
+}
+render();onOpen();
+</script></body></html>
